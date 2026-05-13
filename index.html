@@ -4,1531 +4,800 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Studies Sem 1 — Exam Prep</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Health Studies · Semester 1 Exam Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream: #fdf6ee;
-    --warm-white: #fffaf4;
-    --brown: #3d2b1f;
-    --terracotta: #c96a3b;
-    --sage: #6b8f6e;
-    --dusty-rose: #c98b8b;
-    --gold: #d4a843;
-    --lavender: #8b7fb8;
-    --teal: #4a8fa3;
-    --light-sage: #e8f0e9;
-    --light-terracotta: #f7ece5;
-    --light-lavender: #edeaf5;
-    --light-teal: #e4f0f4;
-    --light-rose: #f7edec;
-    --border: rgba(61,43,31,0.12);
-    --shadow: 0 4px 24px rgba(61,43,31,0.1);
-  }
-
-- { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-font-family: ‘DM Sans’, sans-serif;
-background: var(–cream);
-color: var(–brown);
-line-height: 1.6;
-font-size: 15px;
+:root {
+  --bg:#fef9f4; --surface:#fffcf8;
+  --peach:#f5c5a3; --peach-mid:#e8a07a; --peach-deep:#d4754a;
+  --blush:#f2b8c6; --blush-mid:#e891aa;
+  --mint:#b8dcc8; --mint-mid:#7abb98; --mint-deep:#4e9470;
+  --sky:#b8d8f0; --sky-mid:#7ab3d8; --sky-deep:#4a85ad;
+  --butter:#f5e4a8; --butter-mid:#d4b84a;
+  --lilac:#d4c5e8; --lilac-mid:#a88ece; --lilac-deep:#7a5aad;
+  --rose:#f0cdc8; --rose-mid:#c87878;
+  --ink:#3a2d28; --ink-soft:#6b5148; --ink-muted:#9c8275;
+  --border:rgba(58,45,40,0.1);
+  --shadow-sm:0 2px 12px rgba(200,130,90,0.12);
+  --shadow:0 6px 32px rgba(200,130,90,0.15);
+  --shadow-lg:0 16px 60px rgba(200,130,90,0.18);
+  --r:18px; --rl:28px; --rs:12px;
 }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15px;
+  background-image:
+    radial-gradient(ellipse 600px 400px at 0% 0%,rgba(245,197,163,.25) 0%,transparent 70%),
+    radial-gradient(ellipse 500px 300px at 100% 30%,rgba(242,184,198,.2) 0%,transparent 60%),
+    radial-gradient(ellipse 400px 400px at 20% 80%,rgba(184,220,200,.18) 0%,transparent 60%),
+    radial-gradient(ellipse 500px 300px at 85% 85%,rgba(212,197,232,.18) 0%,transparent 60%);
+  background-attachment:fixed}
+
+/* blobs */
+.blob{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);opacity:.3}
+.b1{width:400px;height:400px;background:var(–peach);top:-100px;left:-100px}
+.b2{width:300px;height:300px;background:var(–blush);top:40%;right:-80px}
+.b3{width:350px;height:350px;background:var(–mint);bottom:-80px;left:20%}
+.b4{width:250px;height:250px;background:var(–lilac);bottom:20%;right:10%}
 
 /* HEADER */
-header {
-background: var(–brown);
-color: var(–cream);
-padding: 48px 32px 40px;
-position: relative;
-overflow: hidden;
-}
-header::before {
-content: ‘’;
-position: absolute;
-top: -60px; right: -60px;
-width: 280px; height: 280px;
-border-radius: 50%;
-background: rgba(201,106,59,0.2);
-}
-header::after {
-content: ‘’;
-position: absolute;
-bottom: -40px; left: 30%;
-width: 160px; height: 160px;
-border-radius: 50%;
-background: rgba(107,143,110,0.15);
-}
-header h1 {
-font-family: ‘Fraunces’, serif;
-font-size: clamp(2.2rem, 5vw, 3.4rem);
-font-weight: 900;
-line-height: 1.1;
-position: relative;
-}
-header h1 span { color: var(–gold); }
-header p {
-margin-top: 10px;
-opacity: 0.7;
-font-size: 0.95rem;
-position: relative;
-}
-.badge-row {
-display: flex;
-flex-wrap: wrap;
-gap: 8px;
-margin-top: 20px;
-position: relative;
-}
-.badge {
-background: rgba(255,255,255,0.12);
-border: 1px solid rgba(255,255,255,0.2);
-color: var(–cream);
-padding: 4px 12px;
-border-radius: 20px;
-font-size: 0.78rem;
-font-weight: 500;
-letter-spacing: 0.03em;
-cursor: pointer;
-transition: background 0.2s;
-text-decoration: none;
-}
-.badge:hover { background: rgba(255,255,255,0.22); }
+header{position:relative;padding:56px 40px 48px;overflow:hidden;
+background:linear-gradient(135deg,#fde8d8 0%,#fce8ee 45%,#e8f4ec 100%);
+border-bottom:1px solid rgba(255,255,255,.8);z-index:1}
+header::before{content:’’;position:absolute;inset:0;
+background:radial-gradient(circle 250px at 82% 50%,rgba(242,184,198,.4),transparent),
+radial-gradient(circle 180px at 8% 80%,rgba(184,220,200,.35),transparent);
+pointer-events:none}
+.hi{position:relative;max-width:1100px;margin:0 auto}
+.htag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.7);
+border:1.5px solid rgba(212,117,74,.3);border-radius:30px;padding:5px 15px;
+font-size:.77rem;font-weight:700;color:var(–peach-deep);letter-spacing:.07em;
+text-transform:uppercase;margin-bottom:18px;backdrop-filter:blur(8px)}
+header h1{font-family:‘Playfair Display’,serif;font-size:clamp(2.4rem,6vw,4rem);
+font-weight:900;line-height:1.05;color:var(–ink);margin-bottom:12px}
+header h1 em{font-style:italic;
+background:linear-gradient(135deg,var(–peach-deep),var(–blush-mid));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header p{font-size:1rem;color:var(–ink-soft);max-width:500px;font-weight:500}
+.npills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.np{background:rgba(255,255,255,.75);border:1.5px solid rgba(58,45,40,.12);
+border-radius:30px;padding:6px 15px;font-size:.79rem;font-weight:600;
+color:var(–ink-soft);text-decoration:none;
+transition:all .22s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(6px)}
+.np:hover{background:white;color:var(–peach-deep);border-color:var(–peach);
+transform:translateY(-2px);box-shadow:var(–shadow-sm)}
 
-/* PROGRESS */
-.progress-bar {
-background: var(–warm-white);
-padding: 16px 32px;
-border-bottom: 1px solid var(–border);
-display: flex;
-align-items: center;
-gap: 16px;
-position: sticky;
-top: 0;
-z-index: 100;
-box-shadow: 0 2px 12px rgba(61,43,31,0.07);
-}
-.progress-bar span { font-size: 0.82rem; font-weight: 500; color: var(–terracotta); white-space: nowrap; }
-.bar-track { flex: 1; height: 6px; background: var(–border); border-radius: 4px; }
-.bar-fill { height: 100%; background: linear-gradient(90deg, var(–terracotta), var(–gold)); border-radius: 4px; transition: width 0.4s; }
-#progress-text { font-size: 0.78rem; opacity: 0.6; }
+/* PROGRESS STRIP */
+.pstrip{position:sticky;top:0;z-index:200;background:rgba(255,252,248,.92);
+backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.9);
+padding:10px 32px;display:flex;align-items:center;gap:14px;
+box-shadow:0 2px 20px rgba(200,130,90,.08)}
+.psl{font-size:.78rem;font-weight:700;color:var(–peach-deep);white-space:nowrap;letter-spacing:.04em}
+.pst{flex:1;height:7px;background:rgba(245,197,163,.3);border-radius:10px;overflow:hidden}
+.psf{height:100%;background:linear-gradient(90deg,var(–peach-mid),var(–blush-mid),var(–lilac-mid));
+border-radius:10px;transition:width .5s cubic-bezier(.4,0,.2,1);width:0%}
+.psc{font-size:.78rem;font-weight:600;color:var(–ink-muted);white-space:nowrap}
 
-/* LAYOUT */
-main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+main{max-width:1100px;margin:0 auto;padding:48px 28px 100px;position:relative;z-index:1}
 
-/* SECTION NAV */
-.toc {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-gap: 10px;
-margin-bottom: 48px;
-}
-.toc-item {
-background: var(–warm-white);
-border: 1.5px solid var(–border);
-border-radius: 12px;
-padding: 14px 12px;
-text-align: center;
-cursor: pointer;
-transition: all 0.2s;
-text-decoration: none;
-color: var(–brown);
-font-size: 0.82rem;
-font-weight: 500;
-}
-.toc-item:hover { border-color: var(–terracotta); background: var(–light-terracotta); transform: translateY(-2px); }
-.toc-item .toc-emoji { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+/* TOC */
+.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:10px;margin-bottom:60px}
+.tc{background:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.95);
+border-radius:var(–r);padding:16px 12px 14px;text-align:center;text-decoration:none;
+color:var(–ink);font-size:.79rem;font-weight:600;
+transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:var(–shadow-sm);backdrop-filter:blur(8px)}
+.tc:hover{transform:translateY(-4px) scale(1.02);box-shadow:var(–shadow);background:white}
+.tc-i{font-size:1.65rem;display:block;margin-bottom:6px}
+.tc-p{border-color:rgba(245,197,163,.6)}.tc-b{border-color:rgba(242,184,198,.6)}
+.tc-m{border-color:rgba(184,220,200,.6)}.tc-s{border-color:rgba(184,216,240,.6)}
+.tc-u{border-color:rgba(245,228,168,.6)}.tc-l{border-color:rgba(212,197,232,.6)}
 
-/* TOPIC SECTION */
-.topic-section {
-margin-bottom: 56px;
-scroll-margin-top: 70px;
-}
-.section-header {
-display: flex;
-align-items: center;
-gap: 14px;
-margin-bottom: 24px;
-padding-bottom: 12px;
-border-bottom: 2px solid;
-}
-.section-header .emoji { font-size: 1.8rem; }
-.section-header h2 {
-font-family: ‘Fraunces’, serif;
-font-size: 1.6rem;
-font-weight: 600;
-}
+/* SECTION */
+.ts{margin-bottom:72px;scroll-margin-top:64px;opacity:0;transform:translateY(28px);
+transition:opacity .6s ease,transform .6s ease}
+.ts.vis{opacity:1;transform:none}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.si{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;
+justify-content:center;font-size:1.5rem;flex-shrink:0;box-shadow:var(–shadow-sm)}
+.sh h2{font-family:‘Playfair Display’,serif;font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;line-height:1.2}
+.sh-sub{font-size:.82rem;color:var(–ink-muted);font-weight:500;margin-top:2px}
 
-.s-terracotta { border-color: var(–terracotta); }
-.s-terracotta h2 { color: var(–terracotta); }
-.s-sage { border-color: var(–sage); }
-.s-sage h2 { color: var(–sage); }
-.s-lavender { border-color: var(–lavender); }
-.s-lavender h2 { color: var(–lavender); }
-.s-teal { border-color: var(–teal); }
-.s-teal h2 { color: var(–teal); }
-.s-gold { border-color: var(–gold); }
-.s-gold h2 { color: var(–gold); }
-.s-rose { border-color: var(–dusty-rose); }
-.s-rose h2 { color: var(–dusty-rose); }
+.th-p .si{background:linear-gradient(135deg,#fde0c8,#f5c5a3)}.th-p h2{color:var(–peach-deep)}
+.th-b .si{background:linear-gradient(135deg,#fce0ea,#f2b8c6)}.th-b h2{color:#c05580}
+.th-m .si{background:linear-gradient(135deg,#d0edd8,#b8dcc8)}.th-m h2{color:var(–mint-deep)}
+.th-s .si{background:linear-gradient(135deg,#d0e8f8,#b8d8f0)}.th-s h2{color:var(–sky-deep)}
+.th-u .si{background:linear-gradient(135deg,#faf0c8,#f5e4a8)}.th-u h2{color:#a08020}
+.th-l .si{background:linear-gradient(135deg,#e8dff5,#d4c5e8)}.th-l h2{color:var(–lilac-deep)}
+.th-r .si{background:linear-gradient(135deg,#fae0dc,#f0cdc8)}.th-r h2{color:var(–rose-mid)}
+
+/* INFO BOX */
+.ib{border-radius:var(–r);padding:18px 22px;margin-bottom:20px;
+border:1.5px solid transparent;position:relative;overflow:hidden}
+.ib::before{content:’’;position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px}
+.ib p,.ib li{font-size:.88rem;line-height:1.7}
+.ib strong{font-size:.9rem;display:block;margin-bottom:4px}
+.ib-p{background:rgba(245,197,163,.2);border-color:rgba(245,197,163,.5)}
+.ib-p::before{background:var(–peach-mid)}
+.ib-m{background:rgba(184,220,200,.2);border-color:rgba(184,220,200,.5)}
+.ib-m::before{background:var(–mint-mid)}
+.ib-s{background:rgba(184,216,240,.2);border-color:rgba(184,216,240,.5)}
+.ib-s::before{background:var(–sky-mid)}
+.ib-l{background:rgba(212,197,232,.2);border-color:rgba(212,197,232,.5)}
+.ib-l::before{background:var(–lilac-mid)}
+.ib-u{background:rgba(245,228,168,.25);border-color:rgba(245,228,168,.6)}
+.ib-u::before{background:var(–butter-mid)}
+.ib-b{background:rgba(242,184,198,.2);border-color:rgba(242,184,198,.5)}
+.ib-b::before{background:var(–blush-mid)}
 
 /* CARDS */
-.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-.card {
-background: var(–warm-white);
-border: 1.5px solid var(–border);
-border-radius: 14px;
-padding: 20px;
-transition: box-shadow 0.2s;
-}
-.card:hover { box-shadow: var(–shadow); }
-.card h3 {
-font-family: ‘Fraunces’, serif;
-font-size: 1.05rem;
-font-weight: 600;
-margin-bottom: 10px;
-}
-.card p, .card li { font-size: 0.88rem; color: rgba(61,43,31,0.8); }
-.card ul { padding-left: 16px; }
-.card ul li { margin-bottom: 4px; }
-.card.c-terracotta { background: var(–light-terracotta); border-color: rgba(201,106,59,0.3); }
-.card.c-terracotta h3 { color: var(–terracotta); }
-.card.c-sage { background: var(–light-sage); border-color: rgba(107,143,110,0.3); }
-.card.c-sage h3 { color: var(–sage); }
-.card.c-lavender { background: var(–light-lavender); border-color: rgba(139,127,184,0.3); }
-.card.c-lavender h3 { color: var(–lavender); }
-.card.c-teal { background: var(–light-teal); border-color: rgba(74,143,163,0.3); }
-.card.c-teal h3 { color: var(–teal); }
-.card.c-gold { background: #fdf5e0; border-color: rgba(212,168,67,0.3); }
-.card.c-gold h3 { color: #a07820; }
-.card.c-rose { background: var(–light-rose); border-color: rgba(201,139,139,0.3); }
-.card.c-rose h3 { color: var(–dusty-rose); }
-
-/* PYRAMID / DIAGRAM */
-.diagram-wrap { background: var(–warm-white); border: 1.5px solid var(–border); border-radius: 16px; padding: 28px 20px; }
-.diagram-title { font-family: ‘Fraunces’, serif; font-size: 1.1rem; font-weight: 600; text-align: center; margin-bottom: 20px; }
-
-/* Maslow Pyramid */
-.pyramid { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; }
-.pyramid-level {
-display: flex; align-items: center; justify-content: center;
-border-radius: 8px; color: white; font-size: 0.82rem; font-weight: 600;
-text-align: center; cursor: pointer; transition: opacity 0.2s;
-padding: 10px 8px;
-position: relative;
-}
-.pyramid-level:hover { opacity: 0.85; }
-.pyramid-level .detail {
-display: none; position: absolute; left: 105%; top: 50%; transform: translateY(-50%);
-background: var(–brown); color: var(–cream); border-radius: 10px;
-padding: 10px 14px; font-size: 0.8rem; font-weight: 400; width: 220px;
-z-index: 10; line-height: 1.5;
-box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-}
-.pyramid-level:hover .detail { display: block; }
-.p1 { width: 40%; background: #c96a3b; }
-.p2 { width: 54%; background: #d4883a; }
-.p3 { width: 67%; background: #d4a843; }
-.p4 { width: 80%; background: #6b8f6e; }
-.p5 { width: 94%; background: #4a8fa3; }
-.pyramid-note { text-align: center; font-size: 0.78rem; opacity: 0.6; margin-top: 12px; }
-
-/* Socio-ecological circles */
-.socio-eco {
-display: flex; flex-direction: column; align-items: center;
-gap: 0; position: relative; padding: 10px 0;
-}
-.se-ring {
-width: 100%; border-radius: 12px; padding: 12px 16px;
-border: 2px solid; margin-bottom: 6px; cursor: pointer;
-transition: all 0.2s; position: relative;
-}
-.se-ring:hover { transform: scale(1.01); }
-.se-ring strong { font-size: 0.9rem; }
-.se-ring p { font-size: 0.8rem; margin-top: 3px; opacity: 0.8; }
-.se1 { background: #fdf5e0; border-color: var(–gold); }
-.se2 { background: var(–light-terracotta); border-color: var(–terracotta); }
-.se3 { background: var(–light-sage); border-color: var(–sage); }
-.se4 { background: var(–light-teal); border-color: var(–teal); }
-.se5 { background: var(–light-lavender); border-color: var(–lavender); }
-
-/* CHECKLIST */
-.checklist-item {
-display: flex; align-items: flex-start; gap: 12px;
-padding: 10px 0; border-bottom: 1px solid var(–border);
-cursor: pointer; user-select: none;
-}
-.checklist-item:last-child { border-bottom: none; }
-.checklist-item input[type=checkbox] {
-margin-top: 3px; width: 17px; height: 17px; accent-color: var(–terracotta);
-cursor: pointer; flex-shrink: 0;
-}
-.checklist-item label { font-size: 0.88rem; cursor: pointer; line-height: 1.5; }
-.checklist-item.checked label { text-decoration: line-through; opacity: 0.5; }
-
-/* FLASHCARD */
-.flashcard-section { margin-top: 16px; }
-.flashcard-deck {
-perspective: 800px; width: 100%; max-width: 480px; height: 180px; margin: 0 auto 16px;
-cursor: pointer;
-}
-.flashcard-inner {
-width: 100%; height: 100%;
-transform-style: preserve-3d;
-transition: transform 0.5s;
-position: relative;
-}
-.flashcard-deck.flipped .flashcard-inner { transform: rotateY(180deg); }
-.flashcard-face {
-position: absolute; width: 100%; height: 100%;
-backface-visibility: hidden;
-border-radius: 16px; padding: 24px;
-display: flex; flex-direction: column; justify-content: center; align-items: center;
-text-align: center;
-border: 2px solid var(–border);
-}
-.fc-front { background: var(–warm-white); }
-.fc-back { background: var(–light-sage); transform: rotateY(180deg); }
-.fc-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; opacity: 0.5; text-transform: uppercase; margin-bottom: 8px; }
-.fc-text { font-size: 1rem; font-weight: 500; line-height: 1.5; }
-.fc-controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.fc-btn {
-padding: 8px 20px; border-radius: 20px; border: 1.5px solid var(–border);
-background: var(–warm-white); color: var(–brown); font-size: 0.82rem;
-font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: ‘DM Sans’, sans-serif;
-}
-.fc-btn:hover { background: var(–terracotta); color: white; border-color: var(–terracotta); }
-.fc-counter { text-align: center; font-size: 0.78rem; opacity: 0.5; margin-bottom: 10px; }
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:16px;margin-bottom:20px}
+.card{background:rgba(255,255,255,.85);border-radius:var(–r);padding:22px 20px;
+border:1.5px solid rgba(255,255,255,.95);box-shadow:var(–shadow-sm);
+transition:all .25s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(8px);
+position:relative;overflow:hidden}
+.card::after{content:’’;position:absolute;top:0;right:0;width:80px;height:80px;
+border-radius:0 var(–r) 0 80px;opacity:.4;transition:opacity .25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(–shadow)}
+.card:hover::after{opacity:.7}
+.card h3{font-family:‘Playfair Display’,serif;font-size:1.05rem;font-weight:700;margin-bottom:10px}
+.card p,.card li{font-size:.86rem;color:var(–ink-soft);line-height:1.65}
+.card ul{padding-left:16px}.card ul li{margin-bottom:4px}
+.cp{border-color:rgba(245,197,163,.5)}.cp::after{background:var(–peach)}.cp h3{color:var(–peach-deep)}
+.cm{border-color:rgba(184,220,200,.5)}.cm::after{background:var(–mint)}.cm h3{color:var(–mint-deep)}
+.cs{border-color:rgba(184,216,240,.5)}.cs::after{background:var(–sky)}.cs h3{color:var(–sky-deep)}
+.cl{border-color:rgba(212,197,232,.5)}.cl::after{background:var(–lilac)}.cl h3{color:var(–lilac-deep)}
+.cu{border-color:rgba(245,228,168,.6)}.cu::after{background:var(–butter)}.cu h3{color:#a07820}
+.cr{border-color:rgba(242,184,198,.5)}.cr::after{background:var(–blush)}.cr h3{color:#c05580}
 
 /* TABLE */
-.styled-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 10px; }
-.styled-table th {
-background: var(–brown); color: var(–cream);
-padding: 10px 14px; text-align: left; font-weight: 500; font-size: 0.82rem;
-}
-.styled-table td { padding: 9px 14px; border-bottom: 1px solid var(–border); vertical-align: top; }
-.styled-table tr:nth-child(even) td { background: rgba(61,43,31,0.03); }
-.styled-table tr:hover td { background: var(–light-terracotta); }
+.tw{border-radius:var(–r);overflow:hidden;box-shadow:var(–shadow-sm)}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+thead tr th{padding:12px 16px;text-align:left;font-weight:700;font-size:.8rem;letter-spacing:.04em;color:white}
+td{padding:10px 16px;border-bottom:1px solid var(–border);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:rgba(255,255,255,.5)}
+tr:hover td{background:rgba(245,197,163,.12)}
+tbody{background:rgba(255,255,255,.8)}
+.t-p thead{background:linear-gradient(90deg,#f5c5a3,#e8a07a)}
+.t-m thead{background:linear-gradient(90deg,#b8dcc8,#7abb98)}
+.t-s thead{background:linear-gradient(90deg,#b8d8f0,#7ab3d8)}
+.t-l thead{background:linear-gradient(90deg,#d4c5e8,#a88ece)}
 
-/* STEPS */
-.steps { counter-reset: step; }
-.step-item {
-display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start;
-}
-.step-num {
-counter-increment: step;
-min-width: 36px; height: 36px; border-radius: 50%;
-background: var(–terracotta); color: white;
-display: flex; align-items: center; justify-content: center;
-font-family: ‘Fraunces’, serif; font-size: 1rem; font-weight: 900;
-flex-shrink: 0;
-}
-.step-num::after { content: counter(step); }
-.step-content h4 { font-weight: 600; font-size: 0.92rem; margin-bottom: 4px; }
-.step-content p { font-size: 0.85rem; opacity: 0.8; }
+/* PYRAMID */
+.pyrw{background:linear-gradient(160deg,rgba(255,255,255,.9),rgba(255,248,240,.9));
+border-radius:var(–rl);padding:32px 24px 28px;box-shadow:var(–shadow);
+border:1.5px solid rgba(255,255,255,.95);margin-bottom:24px}
+.pyrt{font-family:‘Playfair Display’,serif;font-size:1.15rem;font-weight:700;text-align:center;margin-bottom:4px}
+.pyrs{text-align:center;font-size:.78rem;color:var(–ink-muted);margin-bottom:22px}
+.pyr{display:flex;flex-direction:column;align-items:center;gap:5px}
+.pl{border-radius:12px;display:flex;align-items:center;justify-content:center;
+font-size:.85rem;font-weight:700;color:white;cursor:pointer;padding:12px 16px;
+text-align:center;position:relative;transition:all .22s ease;
+box-shadow:0 3px 12px rgba(0,0,0,.12)}
+.pl:hover{transform:scale(1.025);box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.pl .tip{display:none;position:absolute;left:calc(100% + 14px);top:50%;transform:translateY(-50%);
+background:white;color:var(–ink);border-radius:var(–rs);padding:14px 18px;
+width:240px;z-index:50;font-size:.82rem;font-weight:400;line-height:1.6;
+box-shadow:var(–shadow-lg);border:1.5px solid rgba(255,255,255,.9);text-align:left}
+.pl:hover .tip{display:block}
+.pl .tip strong{display:block;margin-bottom:5px;font-size:.88rem}
+.pl1{width:38%;background:linear-gradient(135deg,#c87878,#e891aa)}
+.pl2{width:52%;background:linear-gradient(135deg,#d4924a,#e8a07a)}
+.pl3{width:65%;background:linear-gradient(135deg,#c8b040,#d4b84a)}
+.pl4{width:78%;background:linear-gradient(135deg,#5aa878,#7abb98)}
+.pl5{width:92%;background:linear-gradient(135deg,#5a9ab8,#7ab3d8)}
+.pyr-note{text-align:center;font-size:.76rem;color:var(–ink-muted);margin-top:16px}
+
+/* SOCIO-ECO */
+.sew{background:linear-gradient(160deg,rgba(255,255,255,.9),rgba(240,248,255,.9));
+border-radius:var(–rl);padding:28px 24px;box-shadow:var(–shadow);border:1.5px solid rgba(255,255,255,.95)}
+.set{font-family:‘Playfair Display’,serif;font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.ses{font-size:.78rem;color:var(–ink-muted);margin-bottom:18px}
+.ser{border-radius:var(–rs);padding:13px 18px;margin-bottom:7px;border:2px solid transparent;
+transition:all .22s ease}
+.ser:hover{transform:translateX(4px);box-shadow:var(–shadow-sm)}
+.ser strong{font-size:.9rem;display:block;margin-bottom:3px}
+.ser p{font-size:.82rem;opacity:.8}
+.se1{background:rgba(245,228,168,.35);border-color:rgba(212,184,74,.4)}.se1 strong{color:#a07820}
+.se2{background:rgba(245,197,163,.35);border-color:rgba(232,160,122,.4)}.se2 strong{color:var(–peach-deep)}
+.se3{background:rgba(184,220,200,.35);border-color:rgba(122,187,152,.4)}.se3 strong{color:var(–mint-deep)}
+.se4{background:rgba(184,216,240,.35);border-color:rgba(122,179,216,.4)}.se4 strong{color:var(–sky-deep)}
+.se5{background:rgba(212,197,232,.35);border-color:rgba(168,142,206,.4)}.se5 strong{color:var(–lilac-deep)}
 
 /* ACCORDION */
-.accordion { border: 1.5px solid var(–border); border-radius: 12px; overflow: hidden; }
-.acc-item { border-bottom: 1px solid var(–border); }
-.acc-item:last-child { border-bottom: none; }
-.acc-header {
-padding: 14px 18px; cursor: pointer; display: flex;
-justify-content: space-between; align-items: center;
-background: var(–warm-white); transition: background 0.2s;
-font-weight: 500; font-size: 0.9rem;
-}
-.acc-header:hover { background: var(–light-terracotta); }
-.acc-header .arrow { transition: transform 0.25s; font-size: 0.8rem; }
-.acc-body { padding: 0 18px; max-height: 0; overflow: hidden; transition: max-height 0.35s, padding 0.25s; }
-.acc-body.open { max-height: 600px; padding: 14px 18px; }
-.acc-body p, .acc-body li { font-size: 0.87rem; opacity: 0.85; line-height: 1.7; }
-.acc-body ul { padding-left: 18px; }
+.acc{border-radius:var(–r);overflow:hidden;box-shadow:var(–shadow-sm);background:rgba(255,255,255,.85)}
+.ai{border-bottom:1px solid rgba(255,255,255,.8)}
+.ai:last-child{border-bottom:none}
+.ah{padding:15px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+font-weight:600;font-size:.9rem;transition:background .2s;user-select:none}
+.ah:hover{background:rgba(245,197,163,.15)}
+.aa{transition:transform .3s cubic-bezier(.4,0,.2,1);font-size:.75rem;opacity:.5}
+.ab{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1),padding .3s;
+padding:0 20px;background:rgba(255,253,249,.85)}
+.ab.open{max-height:500px;padding:14px 20px 18px}
+.ab p,.ab li{font-size:.86rem;color:var(–ink-soft);line-height:1.7}
+.ab ul{padding-left:18px}.ab p+p{margin-top:8px}
+
+/* STEPS */
+.stl{counter-reset:s}
+.step{display:flex;gap:18px;align-items:flex-start;margin-bottom:20px}
+.sb{counter-increment:s;width:40px;height:40px;border-radius:50%;display:flex;
+align-items:center;justify-content:center;font-family:‘Playfair Display’,serif;
+font-size:1.1rem;font-weight:900;color:white;flex-shrink:0;
+box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.sb::after{content:counter(s)}
+.st-p .sb{background:linear-gradient(135deg,var(–peach-mid),var(–peach-deep))}
+.st-s .sb{background:linear-gradient(135deg,var(–sky-mid),var(–sky-deep))}
+.sbod h4{font-weight:700;font-size:.93rem;margin-bottom:4px;color:var(–ink)}
+.sbod p{font-size:.85rem;color:var(–ink-soft)}
+.sc{width:2px;height:16px;border-radius:2px;margin:0 0 4px 19px;opacity:.2;background:var(–peach-mid)}
+
+/* NEEDS GRID */
+.ng{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.nc{border-radius:var(–r);padding:22px 20px;background:rgba(255,255,255,.85);
+border:2px solid transparent;box-shadow:var(–shadow-sm);transition:all .22s ease}
+.nc:hover{transform:translateY(-4px);box-shadow:var(–shadow)}
+.ncb{display:inline-block;border-radius:20px;padding:3px 12px;font-size:.72rem;
+font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px}
+.nc h3{font-family:‘Playfair Display’,serif;font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.nc p{font-size:.84rem;color:var(–ink-soft);line-height:1.65}.nc p+p{margin-top:8px}
+.nc-f{border-color:rgba(245,228,168,.6)}.nc-f .ncb{background:rgba(245,228,168,.5);color:#a07820}.nc-f h3{color:#a07820}
+.nc-e{border-color:rgba(245,197,163,.6)}.nc-e .ncb{background:rgba(245,197,163,.4);color:var(–peach-deep)}.nc-e h3{color:var(–peach-deep)}
+.nc-n{border-color:rgba(184,220,200,.6)}.nc-n .ncb{background:rgba(184,220,200,.4);color:var(–mint-deep)}.nc-n h3{color:var(–mint-deep)}
+.nc-c{border-color:rgba(212,197,232,.6)}.nc-c .ncb{background:rgba(212,197,232,.4);color:var(–lilac-deep)}.nc-c h3{color:var(–lilac-deep)}
+
+/* PRINCIPLES */
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(218px,1fr));gap:12px}
+.pt{border-radius:var(–r);padding:18px 16px;border:1.5px solid transparent;transition:transform .2s,box-shadow .2s}
+.pt:hover{transform:translateY(-3px);box-shadow:var(–shadow-sm)}
+.pt-i{font-size:1.4rem;margin-bottom:8px}.pt h4{font-weight:700;font-size:.88rem;margin-bottom:5px}.pt p{font-size:.8rem;opacity:.75}
+.pm{background:rgba(184,220,200,.3);border-color:rgba(184,220,200,.5)}.pm h4{color:var(–mint-deep)}
+.pp{background:rgba(245,197,163,.3);border-color:rgba(245,197,163,.5)}.pp h4{color:var(–peach-deep)}
+.ps_{background:rgba(184,216,240,.3);border-color:rgba(184,216,240,.5)}.ps_ h4{color:var(–sky-deep)}
+.pu{background:rgba(245,228,168,.35);border-color:rgba(245,228,168,.6)}.pu h4{color:#a07820}
+.pl_{background:rgba(212,197,232,.3);border-color:rgba(212,197,232,.5)}.pl_ h4{color:var(–lilac-deep)}
+.pb{background:rgba(242,184,198,.3);border-color:rgba(242,184,198,.5)}.pb h4{color:#c05580}
+.pr{background:rgba(240,205,200,.3);border-color:rgba(240,205,200,.5)}.pr h4{color:var(–rose-mid)}
+
+/* OTTAWA */
+.og{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.ot{border-radius:var(–r);padding:20px 16px;text-align:center;background:rgba(255,255,255,.8);
+border:1.5px solid rgba(255,255,255,.9);box-shadow:var(–shadow-sm);transition:all .22s ease}
+.ot:hover{transform:translateY(-4px);box-shadow:var(–shadow)}
+.ot-i{font-size:2rem;margin-bottom:10px}.ot h4{font-weight:700;font-size:.84rem;margin-bottom:6px}.ot p{font-size:.78rem;color:var(–ink-muted);line-height:1.55}
 
 /* QUIZ */
-.quiz-card {
-background: var(–warm-white); border: 1.5px solid var(–border);
-border-radius: 14px; padding: 22px;
-}
-.quiz-q { font-weight: 600; font-size: 0.95rem; margin-bottom: 14px; }
-.quiz-opts { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
-.quiz-opt {
-padding: 10px 14px; border-radius: 10px; border: 1.5px solid var(–border);
-background: var(–cream); cursor: pointer; font-size: 0.87rem;
-transition: all 0.2s; text-align: left; font-family: ‘DM Sans’, sans-serif;
-}
-.quiz-opt:hover { border-color: var(–terracotta); background: var(–light-terracotta); }
-.quiz-opt.correct { background: var(–light-sage); border-color: var(–sage); color: #2d5c30; font-weight: 600; }
-.quiz-opt.wrong { background: var(–light-rose); border-color: var(–dusty-rose); }
-.quiz-feedback { font-size: 0.85rem; padding: 10px 14px; border-radius: 8px; margin-top: 6px; display: none; }
-.quiz-feedback.show { display: block; }
-.quiz-feedback.correct { background: var(–light-sage); color: #2d5c30; }
-.quiz-feedback.wrong { background: var(–light-rose); color: #7a2222; }
-.quiz-nav { display: flex; gap: 10px; margin-top: 10px; }
-.btn {
-padding: 9px 20px; border-radius: 20px; border: none;
-background: var(–terracotta); color: white; font-size: 0.85rem;
-font-weight: 600; cursor: pointer; font-family: ‘DM Sans’, sans-serif;
-transition: opacity 0.2s;
-}
-.btn:hover { opacity: 0.85; }
-.btn.secondary { background: var(–warm-white); color: var(–brown); border: 1.5px solid var(–border); }
-.btn.secondary:hover { background: var(–light-terracotta); }
-#quiz-score { font-size: 0.82rem; opacity: 0.6; align-self: center; }
+.qshell{background:linear-gradient(145deg,rgba(255,255,255,.95),rgba(255,248,240,.95));
+border-radius:var(–rl);padding:32px 28px;box-shadow:var(–shadow-lg);border:1.5px solid rgba(255,255,255,.95)}
+.qtop{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.qctr{font-size:.78rem;font-weight:700;color:var(–ink-muted);letter-spacing:.04em;text-transform:uppercase}
+.qpt{flex:1;margin:0 18px;height:5px;background:rgba(245,197,163,.3);border-radius:10px}
+.qpf{height:100%;border-radius:10px;background:linear-gradient(90deg,var(–peach-mid),var(–blush-mid));transition:width .4s ease}
+.qsb{background:rgba(245,197,163,.25);color:var(–peach-deep);padding:4px 14px;border-radius:20px;
+font-size:.8rem;font-weight:700;border:1.5px solid rgba(245,197,163,.4)}
+.qq{font-family:‘Playfair Display’,serif;font-size:1.1rem;font-weight:600;line-height:1.45;
+color:var(–ink);margin-bottom:20px;min-height:50px}
+.qopts{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.qo{background:rgba(255,255,255,.8);border:2px solid rgba(245,197,163,.3);border-radius:var(–rs);
+padding:12px 18px;text-align:left;font-family:‘Nunito’,sans-serif;font-size:.88rem;
+font-weight:500;color:var(–ink-soft);cursor:pointer;transition:all .2s ease}
+.qo:hover{border-color:var(–peach-mid);background:rgba(245,197,163,.12);color:var(–ink);transform:translateX(3px)}
+.qo.correct{background:rgba(184,220,200,.35);border-color:var(–mint-mid);color:var(–mint-deep);font-weight:700}
+.qo.wrong{background:rgba(242,184,198,.35);border-color:var(–blush-mid);color:#c05580}
+.qfb{border-radius:var(–rs);padding:12px 18px;font-size:.86rem;line-height:1.6;display:none;margin-bottom:14px}
+.qfb.show{display:block}
+.qfb.correct{background:rgba(184,220,200,.3);border:1.5px solid rgba(184,220,200,.5);color:var(–mint-deep)}
+.qfb.wrong{background:rgba(242,184,198,.3);border:1.5px solid rgba(242,184,198,.5);color:#c05580}
+.qdone{display:none;text-align:center;padding:20px 0}
+.qdone .qde{font-size:3.5rem;margin-bottom:12px;display:block}
+.qdone h3{font-family:‘Playfair Display’,serif;font-size:1.6rem;font-weight:700;margin-bottom:8px}
+.qdone p{font-size:.88rem;color:var(–ink-muted);margin-bottom:20px}
 
-/* PILL LABELS */
-.pill {
-display: inline-block; padding: 2px 10px; border-radius: 20px;
-font-size: 0.75rem; font-weight: 600; margin-bottom: 8px;
-}
-.pill-terracotta { background: var(–light-terracotta); color: var(–terracotta); }
-.pill-sage { background: var(–light-sage); color: var(–sage); }
-.pill-lavender { background: var(–light-lavender); color: var(–lavender); }
-.pill-teal { background: var(–light-teal); color: var(–teal); }
-.pill-gold { background: #fdf5e0; color: #a07820; }
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 24px;border-radius:30px;
+border:none;font-family:‘Nunito’,sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;
+transition:all .22s ease;text-decoration:none}
+.btn-p{background:linear-gradient(135deg,var(–peach-mid),var(–peach-deep));color:white;
+box-shadow:0 4px 16px rgba(212,117,74,.35)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(212,117,74,.45)}
+.btn-sec{background:rgba(255,255,255,.85);color:var(–ink-soft);border:1.5px solid var(–border)}
+.btn-sec:hover{background:white;color:var(–ink)}
+.btn-m{background:linear-gradient(135deg,var(–mint-mid),var(–mint-deep));color:white;
+box-shadow:0 4px 16px rgba(78,148,112,.3)}
+.btn-m:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(78,148,112,.4)}
 
-/* HIGHLIGHT BOX */
-.highlight-box {
-border-left: 4px solid var(–terracotta); background: var(–light-terracotta);
-padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 16px 0;
-}
-.highlight-box.sage { border-left-color: var(–sage); background: var(–light-sage); }
-.highlight-box.lavender { border-left-color: var(–lavender); background: var(–light-lavender); }
-.highlight-box.teal { border-left-color: var(–teal); background: var(–light-teal); }
-.highlight-box p { font-size: 0.88rem; }
-.highlight-box strong { font-size: 0.9rem; }
+/* FLASHCARDS */
+.fcw{max-width:520px;margin:0 auto}
+.fcc{text-align:center;font-size:.78rem;color:var(–ink-muted);font-weight:600;margin-bottom:12px;letter-spacing:.05em;text-transform:uppercase}
+.fcd{perspective:1000px;height:200px;cursor:pointer;margin-bottom:16px}
+.fci{width:100%;height:100%;transform-style:preserve-3d;
+transition:transform .55s cubic-bezier(.4,0,.2,1);position:relative}
+.fcd.flip .fci{transform:rotateY(180deg)}
+.fcf{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(–rl);
+padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+text-align:center;box-shadow:var(–shadow);border:1.5px solid rgba(255,255,255,.95)}
+.fcfront{background:linear-gradient(145deg,rgba(255,255,255,.95),rgba(255,248,240,.9))}
+.fcback{background:linear-gradient(145deg,rgba(184,220,200,.6),rgba(212,232,220,.7));transform:rotateY(180deg)}
+.fctag{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.5;margin-bottom:10px}
+.fcterm{font-family:‘Playfair Display’,serif;font-size:1.25rem;font-weight:700;color:var(–ink);line-height:1.3}
+.fchint{font-size:.75rem;color:var(–ink-muted);margin-top:10px}
+.fcdef{font-size:.88rem;color:var(–ink);line-height:1.65;font-weight:500}
+.fcbtns{display:flex;gap:10px;justify-content:center}
 
-/* NSFCC PRINCIPLES */
-.principles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
-.principle-card {
-border-radius: 12px; padding: 16px; border: 1.5px solid;
-}
-.principle-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 6px; }
-.principle-card p { font-size: 0.82rem; opacity: 0.8; }
+/* CHECKLIST */
+.cls{margin-bottom:28px}
+.clsh{font-family:‘Playfair Display’,serif;font-size:1.05rem;font-weight:700;
+margin-bottom:12px;color:var(–peach-deep);display:flex;align-items:center;gap:8px}
+.cli{display:flex;align-items:flex-start;gap:12px;padding:11px 14px;border-radius:var(–rs);
+cursor:pointer;transition:background .18s;margin-bottom:4px;border:1.5px solid transparent}
+.cli:hover{background:rgba(245,197,163,.12);border-color:rgba(245,197,163,.3)}
+.cli input{margin-top:3px;width:17px;height:17px;accent-color:var(–mint-deep);cursor:pointer;flex-shrink:0}
+.cli label{font-size:.87rem;cursor:pointer;line-height:1.55;color:var(–ink-soft)}
+.cli.chk{background:rgba(184,220,200,.2);border-color:rgba(184,220,200,.4)}
+.cli.chk label{text-decoration:line-through;color:var(–ink-muted)}
 
-/* Ottawa Charter */
-.ottawa-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
-.ottawa-item {
-background: var(–warm-white); border: 1.5px solid var(–border);
-border-radius: 12px; padding: 16px; text-align: center;
+@media(max-width:680px){
+header{padding:40px 24px 36px}main{padding:32px 16px 80px}
+.cg{grid-template-columns:1fr}.ng{grid-template-columns:1fr}
+.pl .tip{left:auto;right:auto;top:calc(100% + 8px);transform:none}
+.toc{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
 }
-.ottawa-item .o-icon { font-size: 1.8rem; margin-bottom: 8px; }
-.ottawa-item h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; }
-.ottawa-item p { font-size: 0.8rem; opacity: 0.75; }
-
-/* RESPONSIVE */
-@media (max-width: 640px) {
-main { padding: 24px 16px 60px; }
-.card-grid { grid-template-columns: 1fr; }
-.pyramid-level .detail { left: auto; right: auto; top: 110%; transform: none; width: 200px; }
-}
-
-/* SCROLL ANIMATION */
-.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
-.fade-in.visible { opacity: 1; transform: none; }
 </style>
 
 </head>
 <body>
 
+<div class="blob b1"></div><div class="blob b2"></div>
+<div class="blob b3"></div><div class="blob b4"></div>
+
 <header>
-  <h1>Health Studies<br><span>Exam Prep</span></h1>
-  <p>WACE Semester 1 · ATAR Year 12 · Comprehensive Study Guide</p>
-  <div class="badge-row">
-    <a class="badge" href="#holistic">Holistic Health</a>
-    <a class="badge" href="#models">Models & Frameworks</a>
-    <a class="badge" href="#populations">Specific Populations</a>
-    <a class="badge" href="#needs-types">Types of Needs</a>
-    <a class="badge" href="#needs-assess">Needs Assessment</a>
-    <a class="badge" href="#actions">Actions & Strategies</a>
-    <a class="badge" href="#consumer">Consumer Health</a>
-    <a class="badge" href="#skills-health">Health Skills</a>
-    <a class="badge" href="#inquiry">Health Inquiry</a>
-    <a class="badge" href="#nsfcc">NSFCC</a>
-    <a class="badge" href="#quiz">Quick Quiz</a>
-    <a class="badge" href="#flashcards">Flashcards</a>
-    <a class="badge" href="#checklist">Checklist</a>
+  <div class="hi">
+    <div class="htag">🌸 WACE · ATAR Year 12 · Semester 1</div>
+    <h1>Health Studies<br><em>Exam Prep</em></h1>
+    <p>Everything you need for your Semester 1 exam — beautifully organised, interactive, and ready to study.</p>
+    <nav class="npills">
+      <a class="np" href="#holistic">🌿 Holistic Health</a>
+      <a class="np" href="#models">🔬 Models</a>
+      <a class="np" href="#populations">👥 Populations</a>
+      <a class="np" href="#needs-types">💡 Types of Need</a>
+      <a class="np" href="#needs-assess">📋 Needs Assessment</a>
+      <a class="np" href="#actions">⚡ Actions</a>
+      <a class="np" href="#consumer">🏥 Consumer Health</a>
+      <a class="np" href="#health-skills">💪 Skills</a>
+      <a class="np" href="#inquiry">🔍 Health Inquiry</a>
+      <a class="np" href="#nsfcc">📜 NSFCC</a>
+      <a class="np" href="#quiz">🧠 Quiz</a>
+      <a class="np" href="#flashcards">🃏 Flashcards</a>
+      <a class="np" href="#checklist">✅ Checklist</a>
+    </nav>
   </div>
 </header>
 
-<div class="progress-bar">
-  <span>📋 Checklist</span>
-  <div class="bar-track"><div class="bar-fill" id="bar" style="width:0%"></div></div>
-  <span id="progress-text">0 / 0 done</span>
+<div class="pstrip">
+  <span class="psl">✅ Checklist</span>
+  <div class="pst"><div class="psf" id="psf"></div></div>
+  <span class="psc" id="psc">0 / 0</span>
 </div>
 
 <main>
-
-  <!-- TABLE OF CONTENTS -->
-
-  <div class="toc fade-in">
-    <a class="toc-item" href="#holistic"><span class="toc-emoji">🌿</span>Holistic Health</a>
-    <a class="toc-item" href="#models"><span class="toc-emoji">🔬</span>Models & Frameworks</a>
-    <a class="toc-item" href="#populations"><span class="toc-emoji">👥</span>Populations</a>
-    <a class="toc-item" href="#needs-types"><span class="toc-emoji">💡</span>Types of Needs</a>
-    <a class="toc-item" href="#needs-assess"><span class="toc-emoji">📋</span>Needs Assessment</a>
-    <a class="toc-item" href="#actions"><span class="toc-emoji">⚡</span>Actions & Strategies</a>
-    <a class="toc-item" href="#consumer"><span class="toc-emoji">🏥</span>Consumer Health</a>
-    <a class="toc-item" href="#skills-health"><span class="toc-emoji">💪</span>Health Skills</a>
-    <a class="toc-item" href="#inquiry"><span class="toc-emoji">🔍</span>Health Inquiry</a>
-    <a class="toc-item" href="#nsfcc"><span class="toc-emoji">📜</span>NSFCC</a>
-    <a class="toc-item" href="#quiz"><span class="toc-emoji">🧠</span>Quick Quiz</a>
-    <a class="toc-item" href="#flashcards"><span class="toc-emoji">🃏</span>Flashcards</a>
-    <a class="toc-item" href="#checklist"><span class="toc-emoji">✅</span>Checklist</a>
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- 1. HOLISTIC HEALTH -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="holistic">
-    <div class="section-header s-terracotta">
-      <span class="emoji">🌿</span>
-      <h2>Holistic Health</h2>
-    </div>
-
-```
-<div class="highlight-box" style="margin-bottom:20px;">
-  <strong>Key Idea:</strong> <p>Holistic health considers all dimensions of a person's wellbeing — not just physical health — and recognises how social, mental, emotional, and spiritual factors interact.</p>
+<div class="toc">
+  <a class="tc tc-p" href="#holistic"><span class="tc-i">🌿</span>Holistic Health</a>
+  <a class="tc tc-l" href="#models"><span class="tc-i">🔬</span>Models</a>
+  <a class="tc tc-m" href="#populations"><span class="tc-i">👥</span>Populations</a>
+  <a class="tc tc-u" href="#needs-types"><span class="tc-i">💡</span>Types of Need</a>
+  <a class="tc tc-s" href="#needs-assess"><span class="tc-i">📋</span>Needs Assessment</a>
+  <a class="tc tc-p" href="#actions"><span class="tc-i">⚡</span>Actions</a>
+  <a class="tc tc-b" href="#consumer"><span class="tc-i">🏥</span>Consumer Health</a>
+  <a class="tc tc-b" href="#health-skills"><span class="tc-i">💪</span>Skills</a>
+  <a class="tc tc-s" href="#inquiry"><span class="tc-i">🔍</span>Health Inquiry</a>
+  <a class="tc tc-m" href="#nsfcc"><span class="tc-i">📜</span>NSFCC</a>
+  <a class="tc tc-p" href="#quiz"><span class="tc-i">🧠</span>Quiz</a>
+  <a class="tc tc-l" href="#flashcards"><span class="tc-i">🃏</span>Flashcards</a>
+  <a class="tc tc-m" href="#checklist"><span class="tc-i">✅</span>Checklist</a>
 </div>
 
-<div class="card-grid">
-  <div class="card c-terracotta">
-    <h3>Physical Health</h3>
-    <p>The condition of the body — absence of disease, fitness, nutrition, sleep. Foundation for all other dimensions.</p>
-  </div>
-  <div class="card c-sage">
-    <h3>Mental / Emotional Health</h3>
-    <p>Ability to manage emotions, cope with stress, maintain a positive outlook, and form a stable identity.</p>
-  </div>
-  <div class="card c-lavender">
-    <h3>Social Health</h3>
-    <p>Quality of relationships, ability to interact with others, sense of belonging, communication skills.</p>
-  </div>
-  <div class="card c-teal">
-    <h3>Spiritual Health</h3>
-    <p>Sense of purpose, values, meaning — may or may not be religious. Includes cultural identity and connection.</p>
-  </div>
-</div>
+<!-- 1. HOLISTIC HEALTH -->
 
-<div style="margin-top:24px;">
-  <h3 style="font-family:'Fraunces',serif; font-size:1.1rem; margin-bottom:14px;">Quantitative vs Qualitative Data</h3>
-  <table class="styled-table" style="border-radius:12px;overflow:hidden;">
-    <thead>
-      <tr><th>Feature</th><th>Quantitative</th><th>Qualitative</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>Type</strong></td><td>Numerical / measurable</td><td>Descriptive / non-numerical</td></tr>
-      <tr><td><strong>Examples</strong></td><td>Mortality rates, BMI, survey scales, hospital admissions</td><td>Interviews, focus groups, personal accounts</td></tr>
-      <tr><td><strong>Strengths</strong></td><td>Objective, comparable, statistically analysable</td><td>Rich detail, captures lived experience</td></tr>
-      <tr><td><strong>Use in Health</strong></td><td>Epidemiological data, needs assessment</td><td>Understanding perceptions, barriers to care</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div style="margin-top:24px;">
-  <h3 style="font-family:'Fraunces',serif; font-size:1.1rem; margin-bottom:14px;">Health Inequities</h3>
-  <div class="highlight-box sage">
-    <strong>Health Inequity</strong> = unfair, avoidable differences in health outcomes between groups due to social, economic, or environmental disadvantages.
-    <br><br>
-    <strong>Health Inequality</strong> = measurable differences in health status (not necessarily unfair).
+<section class="ts th-p" id="holistic">
+  <div class="sh"><div class="si">🌿</div><div><h2>Holistic Health</h2><div class="sh-sub">Dimensions · Data types · Health inequity</div></div></div>
+  <div class="ib ib-p"><strong>Key Idea</strong><p>Holistic health considers ALL dimensions of wellbeing — physical, mental, social, and spiritual — and how they interact. No single dimension exists in isolation.</p></div>
+  <div class="cg">
+    <div class="card cp"><h3>🫁 Physical Health</h3><p>The condition of the body — absence of disease, physical fitness, nutrition, adequate sleep, and healthy bodily functioning. The foundation all other dimensions build upon.</p></div>
+    <div class="card cl"><h3>🧠 Mental & Emotional Health</h3><p>Managing emotions, coping with stress, maintaining a positive outlook, forming a stable identity. Includes psychological resilience and emotional regulation.</p></div>
+    <div class="card cm"><h3>🤝 Social Health</h3><p>Quality of relationships and ability to interact positively with others. Includes a sense of belonging, communication skills, and community connection.</p></div>
+    <div class="card cs"><h3>✨ Spiritual Health</h3><p>Sense of purpose, values, and meaning — may or may not be religious. Includes cultural identity, connection to community, and a sense of place and belonging.</p></div>
   </div>
-  <div class="card-grid" style="margin-top:12px;">
-    <div class="card">
-      <h3>Factors Creating Inequity</h3>
-      <ul>
-        <li>Income and socioeconomic status</li>
-        <li>Geographic location (rural/remote)</li>
-        <li>Cultural and language barriers</li>
-        <li>Discrimination and stigma</li>
-        <li>Education and health literacy</li>
-        <li>Historical trauma (esp. First Nations)</li>
-      </ul>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;margin:24px 0 14px;color:var(--peach-deep)">Quantitative vs Qualitative Data</h3>
+  <div class="tw" style="margin-bottom:28px">
+    <table class="t-p">
+      <thead><tr><th>Feature</th><th>Quantitative</th><th>Qualitative</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Type</strong></td><td>Numerical, measurable</td><td>Descriptive, non-numerical</td></tr>
+        <tr><td><strong>Examples</strong></td><td>Mortality rates, BMI, hospital admissions, survey scales</td><td>Interviews, focus groups, personal health narratives</td></tr>
+        <tr><td><strong>Strengths</strong></td><td>Objective, comparable, statistically analysable</td><td>Rich detail, captures lived experience and perceptions</td></tr>
+        <tr><td><strong>Use in Health</strong></td><td>Epidemiological data, needs assessment, tracking trends</td><td>Understanding barriers to care, community perspectives</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:14px;color:var(--peach-deep)">Health Inequity vs Inequality</h3>
+  <div class="ib ib-m"><strong>⚖️ Health Inequity</strong><p><strong>Unfair, avoidable</strong> differences in health outcomes between groups — caused by social, economic, or environmental disadvantages. Inequities can and should be addressed.</p></div>
+  <div class="ib ib-u"><strong>📊 Health Inequality</strong><p>Measurable differences in health status between groups — not necessarily unfair (e.g. older people have higher mortality). Inequality <em>describes</em>; inequity <em>judges fairness</em>.</p></div>
+  <div class="cg">
+    <div class="card cp"><h3>Factors Creating Inequity</h3><ul><li>Income and socioeconomic status</li><li>Geographic location (rural/remote)</li><li>Cultural and language barriers</li><li>Discrimination and stigma</li><li>Low education and health literacy</li><li>Historical trauma (esp. First Nations)</li></ul></div>
+    <div class="card cm"><h3>Social Determinants of Health</h3><ul><li>Education and health literacy</li><li>Employment and income</li><li>Safe housing and environment</li><li>Access to healthcare services</li><li>Social inclusion and support networks</li><li>Early childhood development</li></ul></div>
+  </div>
+</section>
+
+<!-- 2. MODELS -->
+
+<section class="ts th-l" id="models">
+  <div class="sh"><div class="si">🔬</div><div><h2>Principles, Frameworks, Models & Theories</h2><div class="sh-sub">Maslow's Hierarchy · Socio-Ecological Model</div></div></div>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:16px;color:var(--lilac-deep)">Maslow's Hierarchy of Needs</h3>
+  <div class="pyrw">
+    <div class="pyrt">Maslow's Hierarchy of Needs</div>
+    <div class="pyrs">Hover each level for detailed characteristics ✨</div>
+    <div class="pyr">
+      <div class="pl pl1">Self-Actualisation<div class="tip"><strong>Self-Actualisation</strong>Personal growth, creativity, reaching full potential. The desire to become the best version of oneself. Only achievable once all lower needs are met.</div></div>
+      <div class="pl pl2">Esteem Needs<div class="tip"><strong>Esteem Needs</strong>Self-respect, recognition, confidence, achievement. Unmet esteem needs → low self-worth, depression, lack of motivation.</div></div>
+      <div class="pl pl3">Love & Belonging<div class="tip"><strong>Love & Belonging</strong>Relationships, friendships, community. Unmet → loneliness, social withdrawal, vulnerability to peer pressure.</div></div>
+      <div class="pl pl4">Safety Needs<div class="tip"><strong>Safety Needs</strong>Security, freedom from harm, employment stability, health. Unmet → anxiety, hypervigilance, avoidance behaviour.</div></div>
+      <div class="pl pl5">Physiological Needs<div class="tip"><strong>Physiological Needs</strong>Food, water, shelter, sleep, warmth. Most basic survival needs — must be met first. Behaviour driven primarily by survival when unmet.</div></div>
     </div>
-    <div class="card">
-      <h3>Social Determinants of Health</h3>
-      <ul>
-        <li>Education</li>
-        <li>Employment & income</li>
-        <li>Housing and environment</li>
-        <li>Access to healthcare</li>
-        <li>Social inclusion</li>
-        <li>Early childhood development</li>
-      </ul>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- 2. MODELS & FRAMEWORKS -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="models">
-    <div class="section-header s-lavender">
-      <span class="emoji">🔬</span>
-      <h2>Principles, Frameworks, Models & Theories</h2>
-    </div>
-
-```
-<!-- MASLOW -->
-<h3 style="font-family:'Fraunces',serif; margin-bottom:14px; font-size:1.15rem;">Maslow's Hierarchy of Needs</h3>
-<div class="diagram-wrap" style="margin-bottom:24px;">
-  <div class="diagram-title">Hover each level for details ↓</div>
-  <div class="pyramid">
-    <div class="pyramid-level p1">
-      Self-Actualisation
-      <div class="detail"><strong>Self-Actualisation</strong><br>Personal growth, creativity, reaching full potential. The desire to become the best version of oneself.</div>
-    </div>
-    <div class="pyramid-level p2">
-      Esteem Needs
-      <div class="detail"><strong>Esteem Needs</strong><br>Self-respect, recognition, confidence, achievement. Unmet esteem needs → low confidence, depression.</div>
-    </div>
-    <div class="pyramid-level p3">
-      Love & Belonging
-      <div class="detail"><strong>Love & Belonging</strong><br>Relationships, friendships, sense of community. Unmet → loneliness, vulnerability to peer pressure.</div>
-    </div>
-    <div class="pyramid-level p4">
-      Safety Needs
-      <div class="detail"><strong>Safety Needs</strong><br>Security, freedom from harm, employment stability, health. Unmet → anxiety, hypervigilance, avoidance behaviour.</div>
-    </div>
-    <div class="pyramid-level p5">
-      Physiological Needs
-      <div class="detail"><strong>Physiological Needs</strong><br>Food, water, shelter, sleep, warmth. The most basic survival needs — must be met first.</div>
-    </div>
-  </div>
-  <p class="pyramid-note">⬆ Needs become more complex as you move up. Lower levels must generally be met first.</p>
-</div>
-
-<div class="highlight-box lavender" style="margin-bottom:24px;">
-  <strong>Exam tip:</strong> <p>You need to explain the PURPOSE of the hierarchy (motivational theory, lower needs before higher), CHARACTERISTICS of each level, and link them to health behaviours or population groups.</p>
-</div>
-
-<!-- SOCIO-ECOLOGICAL MODEL -->
-<h3 style="font-family:'Fraunces',serif; margin-bottom:14px; font-size:1.15rem;">Socio-Ecological Model of Health</h3>
-<div class="diagram-wrap">
-  <div class="diagram-title">Five Nested Levels — Click to explore</div>
-  <div class="socio-eco">
-    <div class="se-ring se1" onclick="toggleAcc(this)">
-      <strong>🧠 Individual</strong>
-      <p>Personal characteristics: knowledge, attitudes, beliefs, genetics, skills, health literacy, personal behaviours, decision-making</p>
-    </div>
-    <div class="se-ring se2" onclick="toggleAcc(this)">
-      <strong>👨‍👩‍👧 Interpersonal</strong>
-      <p>Relationships and social networks: family, friends, peer pressure, support networks, role models</p>
-    </div>
-    <div class="se-ring se3" onclick="toggleAcc(this)">
-      <strong>🏫 Organisational</strong>
-      <p>Structures and policies: workplaces, schools, sports clubs, healthcare settings, internal rules and culture</p>
-    </div>
-    <div class="se-ring se4" onclick="toggleAcc(this)">
-      <strong>🏘️ Community</strong>
-      <p>Community characteristics: neighbourhood safety, cultural norms, local facilities, community resources, physical environment</p>
-    </div>
-    <div class="se-ring se5" onclick="toggleAcc(this)">
-      <strong>🌏 Society / Policy</strong>
-      <p>Broad structures: laws, government funding, health campaigns, economic systems, public policy at local/state/national/international levels</p>
-    </div>
-  </div>
-  <div class="highlight-box teal" style="margin-top:16px;">
-    <strong>Purpose:</strong> <p>Recognises that health is influenced by multiple interacting levels — interventions are more effective when they target several levels simultaneously.</p>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- 3. SPECIFIC POPULATIONS -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="populations">
-    <div class="section-header s-sage">
-      <span class="emoji">👥</span>
-      <h2>Specific Populations — Access & Equity</h2>
-    </div>
-
-```
-<div class="card-grid" style="margin-bottom:20px;">
-  <div class="card c-sage">
-    <h3>Access</h3>
-    <p>The <strong>ability</strong> of individuals and communities to obtain and use healthcare services when needed.</p>
-  </div>
-  <div class="card c-teal">
-    <h3>Equity</h3>
-    <p><strong>Just distribution</strong> of health resources, opportunities, and outcomes — everyone has the ability to achieve their highest level of health.</p>
-  </div>
-</div>
-
-<div class="accordion">
-  <div class="acc-item">
-    <div class="acc-header" onclick="toggleAccordion(this)">
-      🏜️ Rural & Remote Australians <span class="arrow">▼</span>
-    </div>
-    <div class="acc-body">
-      <p><strong>Access Issues:</strong> Limited healthcare facilities, long travel distances, healthcare provider shortages, fewer specialists.</p>
-      <p style="margin-top:8px;"><strong>Equity Issues:</strong> Higher rates of chronic disease, lower insurance coverage, fewer specialised services, digital divide in telehealth.</p>
-    </div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-header" onclick="toggleAccordion(this)">
-      👴 Elderly <span class="arrow">▼</span>
-    </div>
-    <div class="acc-body">
-      <p><strong>Access Issues:</strong> Mobility challenges, carer shortages, digital divide in telehealth services.</p>
-      <p style="margin-top:8px;"><strong>Equity Issues:</strong> Age-related discrimination (ageism), higher prevalence of chronic illnesses, financial constraints, isolation.</p>
-    </div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-header" onclick="toggleAccordion(this)">
-      🪃 First Nations People <span class="arrow">▼</span>
-    </div>
-    <div class="acc-body">
-      <p><strong>Access Issues:</strong> Remote locations with limited health care infrastructure, underfunded services, cultural safety concerns.</p>
-      <p style="margin-top:8px;"><strong>Equity Issues:</strong> Historical trauma (intergenerational), higher prevalence of chronic diseases, lower life expectancy, systemic racism.</p>
-    </div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-header" onclick="toggleAccordion(this)">
-      🏳️‍🌈 LGBTIQ+ <span class="arrow">▼</span>
-    </div>
-    <div class="acc-body">
-      <p><strong>Access Issues:</strong> Discrimination from healthcare providers, lack of culturally safe care, reluctance to disclose identity.</p>
-      <p style="margin-top:8px;"><strong>Equity Issues:</strong> Higher rates of mental health issues, homophobia/transphobia, conversion therapy harm, lack of inclusive health programs.</p>
-    </div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-header" onclick="toggleAccordion(this)">
-      🔒 People in Prison <span class="arrow">▼</span>
-    </div>
-    <div class="acc-body">
-      <p><strong>Access Issues:</strong> Limited access to specialists, restricted healthcare choices, inadequate mental health support.</p>
-      <p style="margin-top:8px;"><strong>Equity Issues:</strong> Higher rates of mental illness, substance use disorders, and communicable diseases; social marginalisation post-release.</p>
-    </div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-header" onclick="toggleAccordion(this)">
-      🌍 Culturally & Linguistically Diverse (CALD) <span class="arrow">▼</span>
-    </div>
-    <div class="acc-body">
-      <p><strong>Access Issues:</strong> Language barriers, lack of culturally appropriate services, low health literacy in English.</p>
-      <p style="margin-top:8px;"><strong>Equity Issues:</strong> Cultural differences in health beliefs, discrimination, socioeconomic disadvantage, reliance on community for health info.</p>
-    </div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-header" onclick="toggleAccordion(this)">
-      👶 Children, Youth & Mothers/Babies <span class="arrow">▼</span>
-    </div>
-    <div class="acc-body">
-      <p><strong>Access Issues:</strong> Dependence on adults to access care, school-based health gap, maternal health service gaps in remote areas.</p>
-      <p style="margin-top:8px;"><strong>Equity Issues:</strong> Developmental impacts from unmet needs, childhood poverty, adverse childhood experiences (ACEs).</p>
-    </div>
-  </div>
-</div>
-
-<div class="highlight-box" style="margin-top:20px;">
-  <strong>Epidemiological Data</strong> — used to identify health needs of specific populations: includes <em>morbidity</em> (illness rates), <em>mortality</em> (death rates), and related characteristics of populations.
-</div>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- 4. TYPES OF NEEDS -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="needs-types">
-    <div class="section-header s-gold">
-      <span class="emoji">💡</span>
-      <h2>Types of Needs</h2>
-    </div>
-
-```
-<div class="highlight-box sage" style="margin-bottom:20px;">
-  <strong>Purpose:</strong> <p>Used in healthcare, social services, and community development to assess and address people's requirements — identifying gaps, prioritising resources, and planning services effectively.</p>
-</div>
-
-<div class="card-grid">
-  <div class="card c-gold">
-    <span class="pill pill-gold">Felt Need</span>
-    <h3>Felt Need</h3>
-    <p><strong>Definition:</strong> A subjective need an individual <em>perceives</em> or feels they have — not yet acted on.</p>
-    <p style="margin-top:8px;"><strong>Example:</strong> Person with chronic back pain feels they need physiotherapy but hasn't sought treatment.</p>
-    <p style="margin-top:8px;"><strong>How to determine:</strong> Community surveys, focus groups, community meetings, social media monitoring.</p>
-  </div>
-  <div class="card c-terracotta">
-    <span class="pill pill-terracotta">Expressed Need</span>
-    <h3>Expressed Need</h3>
-    <p><strong>Definition:</strong> A felt need that has been <em>acted upon</em> — the individual has taken steps to seek help.</p>
-    <p style="margin-top:8px;"><strong>Example:</strong> Person with back pain visits physiotherapist, expressing need for treatment.</p>
-    <p style="margin-top:8px;"><strong>How to determine:</strong> Service usage data, waiting lists, hospital admissions, demand for public programs.</p>
-  </div>
-  <div class="card c-sage">
-    <span class="pill pill-sage">Normative Need</span>
-    <h3>Normative Need</h3>
-    <p><strong>Definition:</strong> A need <em>defined by experts or standards</em> — based on public health guidelines or best practices.</p>
-    <p style="margin-top:8px;"><strong>Example:</strong> Recommended daily fruit & vegetable intake from Australian Dietary Guidelines.</p>
-    <p style="margin-top:8px;"><strong>How to determine:</strong> Official health guidelines, expert consultation, epidemiological data, legal requirements.</p>
-  </div>
-  <div class="card c-lavender">
-    <span class="pill pill-lavender">Comparative Need</span>
-    <h3>Comparative Need</h3>
-    <p><strong>Definition:</strong> Determined by <em>comparing groups</em> to identify gaps in service provision.</p>
-    <p style="margin-top:8px;"><strong>Example:</strong> Rural town with no mental health services compared to an urban area that has them.</p>
-    <p style="margin-top:8px;"><strong>How to determine:</strong> Compare healthcare access, government reports, health statistics, best practices from other communities.</p>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- 5. NEEDS ASSESSMENT -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="needs-assess">
-    <div class="section-header s-teal">
-      <span class="emoji">📋</span>
-      <h2>Needs Assessment</h2>
-    </div>
-
-```
-<div class="highlight-box teal" style="margin-bottom:24px;">
-  <strong>Purpose:</strong> <p>Systematic process used to identify and address health-related issues within a population. Assists decision-makers to allocate resources efficiently and design interventions to improve health outcomes and reduce inequities.</p>
-</div>
-
-<div class="steps" style="max-width:700px;">
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Identifying Health Issues</h4>
-      <p>Recognising health concerns affecting a specific population using data. <em>e.g. high rates of diabetes in a community.</em></p>
-    </div>
-  </div>
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Analysis of the Problem</h4>
-      <p>Examining causes and risk factors; assessing barriers to healthcare access. <em>e.g. lack of healthy food options and exercise facilities.</em></p>
-    </div>
-  </div>
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Prioritising Issues</h4>
-      <p>Ranking health problems based on urgency, impact, and feasibility using community input, stakeholder engagement and data. <em>e.g. diabetes prioritised as highly prevalent and preventable.</em></p>
-    </div>
-  </div>
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Setting Goals (SMART)</h4>
-      <p>Specific, Measurable, Achievable, Relevant, Time-bound goals aligned with public health guidelines. <em>e.g. Reduce diabetes by 10% over 5 years.</em></p>
-    </div>
-  </div>
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Determining Strategies</h4>
-      <p>Evidence-based interventions — policy changes, community programs, education campaigns. <em>e.g. introduction of subsidised healthy food programs.</em></p>
-    </div>
-  </div>
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Developing Action Plans</h4>
-      <p>Creating timelines, delegating responsibilities, allocating resources — engaging health professionals, community leaders, government agencies.</p>
-    </div>
-  </div>
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Evaluating Outcomes</h4>
-      <p>Measuring success through epidemiological data and feedback. Adjusting strategies. <em>e.g. tracking diabetes screening rates.</em></p>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- 6. ACTIONS & STRATEGIES -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="actions">
-    <div class="section-header s-terracotta">
-      <span class="emoji">⚡</span>
-      <h2>Actions & Strategies to Address Health Inequity</h2>
-    </div>
-
-```
-<div class="card-grid" style="margin-bottom:24px;">
-  <div class="card c-terracotta">
-    <h3>Improving Access to Healthcare</h3>
-    <ul>
-      <li>Free or bulk-billed doctor appointments</li>
-      <li>Subsidised medications (PBS)</li>
-      <li>Accessible clinics for people with disability</li>
-      <li>Build hospitals/clinics in remote areas</li>
-      <li>Mobile health clinics</li>
-      <li>Expanded telehealth online services</li>
-      <li>After-hours services</li>
-      <li>Translators / bilingual staff</li>
-    </ul>
-  </div>
-  <div class="card c-sage">
-    <h3>Improving Health Literacy</h3>
-    <ul>
-      <li>Clear, simple language — avoid jargon</li>
-      <li>Use visual images, not just words</li>
-      <li>Develop culturally relevant resources</li>
-      <li>Offer resources in multiple formats</li>
-      <li>Translate materials into multiple languages</li>
-      <li>Provide workshops to develop health skills</li>
-      <li>Community health education programs</li>
-    </ul>
-  </div>
-</div>
-
-<h3 style="font-family:'Fraunces',serif; font-size:1.1rem; margin-bottom:14px;">Ottawa Charter Action Areas</h3>
-<div class="highlight-box lavender" style="margin-bottom:16px;">
-  <strong>Purpose:</strong> <p>Promotes a broad, supportive approach to improving health for everyone by focusing on supportive policies, environments, education, community involvement, and preventative care.</p>
-</div>
-<div class="ottawa-grid">
-  <div class="ottawa-item">
-    <div class="o-icon">📚</div>
-    <h4>Developing Personal Skills</h4>
-    <p>Education and information to increase life skills and support personal development for health choices.</p>
-  </div>
-  <div class="ottawa-item">
-    <div class="o-icon">🏛️</div>
-    <h4>Building Healthy Public Policy</h4>
-    <p>Policies across all sectors that support healthy choices — taxes, legislation, regulations.</p>
-  </div>
-  <div class="ottawa-item">
-    <div class="o-icon">🌳</div>
-    <h4>Creating Supportive Environments</h4>
-    <p>Physical, social, economic, and political environments that are safe and stimulating — health-enabling places.</p>
-  </div>
-  <div class="ottawa-item">
-    <div class="o-icon">🤝</div>
-    <h4>Strengthening Community Action</h4>
-    <p>Empowering communities to set priorities, make decisions, and implement strategies for better health.</p>
-  </div>
-  <div class="ottawa-item">
-    <div class="o-icon">🏥</div>
-    <h4>Reorienting Health Services</h4>
-    <p>Shifting focus from treatment to prevention and health promotion — beyond clinical care.</p>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- 7. CONSUMER HEALTH -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="consumer">
-    <div class="section-header s-rose">
-      <span class="emoji">🏥</span>
-      <h2>Consumer Health</h2>
-    </div>
-
-```
-<div class="card-grid" style="margin-bottom:24px;">
-  <div class="card c-rose">
-    <h3>Health Literacy</h3>
-    <p><strong>Definition:</strong> The ability to obtain, read, understand, and use healthcare information to make appropriate health decisions.</p>
-    <p style="margin-top:8px;"><strong>Link to Health Status:</strong> Higher health literacy → better ability to navigate the health system, follow treatment plans, prevent disease, and achieve better health outcomes.</p>
-  </div>
-  <div class="card c-teal">
-    <h3>Health Indicators</h3>
-    <ul>
-      <li><strong>Life Expectancy:</strong> Average number of years a person is expected to live from birth</li>
-      <li><strong>Mortality:</strong> Death — death rates for specific causes or populations</li>
-      <li><strong>Morbidity:</strong> Illness — rates of disease/injury in a population</li>
-      <li><strong>Infant Mortality Rate:</strong> Deaths per 1,000 live births</li>
-      <li><strong>Burden of Disease:</strong> Impact of illness in terms of disability and premature death (DALYs)</li>
-    </ul>
-  </div>
-</div>
-
-<h3 style="font-family:'Fraunces',serif; font-size:1.1rem; margin-bottom:14px;">Australia vs Developing Countries — Health Indicators</h3>
-<table class="styled-table" style="border-radius:12px;overflow:hidden;">
-  <thead>
-    <tr><th>Indicator</th><th>Australia</th><th>Developing Countries</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Life Expectancy</td><td>~83 years (one of highest globally)</td><td>Often 50–70 years; varies widely</td></tr>
-    <tr><td>Infant Mortality</td><td>~3–4 per 1,000 live births</td><td>Can be 30–100+ per 1,000</td></tr>
-    <tr><td>Leading Causes of Death</td><td>Chronic diseases (CVD, cancer)</td><td>Communicable diseases, maternal/child mortality</td></tr>
-    <tr><td>Access to Healthcare</td><td>Universal (Medicare), high coverage</td><td>Often limited, inequitable, user-pays</td></tr>
-    <tr><td>Health Literacy</td><td>Generally higher but gaps exist</td><td>Often lower due to education gaps</td></tr>
-    <tr><td>Sanitation/Water</td><td>High quality, widely available</td><td>Significant gaps; linked to disease burden</td></tr>
-  </tbody>
-</table>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- 8. HEALTH SKILLS -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="skills-health">
-    <div class="section-header s-lavender">
-      <span class="emoji">💪</span>
-      <h2>Skills for Positive Health</h2>
-    </div>
-
-```
-<div class="card-grid" style="margin-bottom:24px;">
-  <div class="card c-lavender">
-    <span class="pill pill-lavender">Self-Management</span>
-    <h3>Assertiveness</h3>
-    <p>Expressing thoughts, feelings, needs, and boundaries clearly, confidently, and respectfully — standing up for oneself while respecting others' rights.</p>
-  </div>
-  <div class="card c-terracotta">
-    <span class="pill pill-terracotta">Self-Management</span>
-    <h3>Resilience</h3>
-    <p>Ability to adapt, recover, and grow stronger in the face of challenges. The ability to "bounce back" — maintaining wellbeing despite difficulties.</p>
-  </div>
-  <div class="card c-sage">
-    <span class="pill pill-sage">Self-Management</span>
-    <h3>Stress Management</h3>
-    <p>Strategies to cope with and reduce stress — identifying sources, applying methods to minimise negative effects on physical, mental, and emotional wellbeing.</p>
-  </div>
-  <div class="card c-teal">
-    <span class="pill pill-teal">Interpersonal</span>
-    <h3>Communication & Collaboration</h3>
-    <p>Ability to clearly share ideas, listen actively, work cooperatively, and build positive relationships in health settings.</p>
-  </div>
-  <div class="card c-rose">
-    <span class="pill" style="background:var(--light-rose);color:var(--dusty-rose);">Interpersonal</span>
-    <h3>Cultural Competence</h3>
-    <p>Understanding and respecting cultural and language influences on relationship building in health settings — tailoring communication to cultural context.</p>
-  </div>
-</div>
-
-<div class="highlight-box sage">
-  <strong>Culture & Health Decisions</strong>
-  <p>Culture shapes health decision-making around organ and tissue donation, childbirth practices, blood transfusions, and end-of-life care. World events also influence personal, social, and cultural identity, affecting health behaviours.</p>
-</div>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- 9. HEALTH INQUIRY -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="inquiry">
-    <div class="section-header s-teal">
-      <span class="emoji">🔍</span>
-      <h2>Health Inquiry Process</h2>
-    </div>
-
-```
-<div class="highlight-box teal" style="margin-bottom:20px;">
-  <strong>Purpose:</strong> <p>A structured process for understanding and improving the health of populations — used to identify health needs, inform policy, and guide planning.</p>
-</div>
-
-<div class="steps" style="max-width:700px; margin-bottom:24px;">
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Planning a Health Inquiry</h4>
-      <p>Identify and analyse a health issue. Develop <strong>focus questions</strong> to guide research. Good focus questions are clear, specific, researchable, and open-ended.</p>
-    </div>
-  </div>
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Using a Range of Information Sources</h4>
-      <p>Identify reliable sources using criteria: currency, authority, accuracy, purpose, relevance (CAAPR). Use primary and secondary sources; quantitative and qualitative data.</p>
-    </div>
-  </div>
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Interpretation of Information</h4>
-      <p>Summarise information, identify trends and patterns in data, develop evidence-based conclusions, and construct a supported argument.</p>
-    </div>
-  </div>
-  <div class="step-item">
-    <div class="step-num"></div>
-    <div class="step-content">
-      <h4>Presentation of Findings</h4>
-      <p>Choose a format appropriate for the audience — essay, report, oral presentation, poster. Consider language, visuals, and level of detail for the audience.</p>
-    </div>
-  </div>
-</div>
-
-<h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin-bottom:12px;">Criteria for Reliable Information Sources</h3>
-<table class="styled-table" style="border-radius:12px;overflow:hidden;">
-  <thead><tr><th>Criterion</th><th>What to Look For</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Currency</strong></td><td>How recent? Is the information up to date?</td></tr>
-    <tr><td><strong>Authority</strong></td><td>Who wrote it? What are their credentials?</td></tr>
-    <tr><td><strong>Accuracy</strong></td><td>Is it evidence-based? Referenced? Peer reviewed?</td></tr>
-    <tr><td><strong>Purpose</strong></td><td>Why was it written — inform, persuade, sell? Potential bias?</td></tr>
-    <tr><td><strong>Relevance</strong></td><td>Does it directly address your health issue?</td></tr>
-  </tbody>
-</table>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- 10. NSFCC -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="nsfcc">
-    <div class="section-header s-sage">
-      <span class="emoji">📜</span>
-      <h2>National Strategic Framework for Chronic Conditions (NSFCC)</h2>
-    </div>
-
-```
-<div class="card-grid" style="margin-bottom:20px;">
-  <div class="card c-sage">
-    <h3>What are Chronic Conditions?</h3>
-    <ul>
-      <li>Long-term and persistent</li>
-      <li>Gradual onset</li>
-      <li>Compromise quality of life</li>
-      <li>Examples: CVD, diabetes, osteoporosis, cancer, asthma, mental illness</li>
-    </ul>
-  </div>
-  <div class="card c-teal">
-    <h3>Purpose of NSFCC</h3>
-    <p>Provides guidance for the development and implementation of policies, strategies, actions, and services to address chronic conditions and improve health outcomes by <em>preventing</em> and <em>managing</em> chronic conditions.</p>
-  </div>
-</div>
-
-<h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin-bottom:14px;">Three Objectives</h3>
-<div class="accordion" style="margin-bottom:24px;">
-  <div class="acc-item">
-    <div class="acc-header" onclick="toggleAccordion(this)">
-      1️⃣ Focus on Prevention for a Healthier Australia <span class="arrow">▼</span>
-    </div>
-    <div class="acc-body">
-      <ul>
-        <li>Promote health and reduce risk factors</li>
-        <li>Create partnerships for health</li>
-        <li>Address chronic conditions at critical life stages</li>
-      </ul>
-    </div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-header" onclick="toggleAccordion(this)">
-      2️⃣ Provide Efficient, Effective and Appropriate Care <span class="arrow">▼</span>
-    </div>
-    <div class="acc-body">
-      <ul>
-        <li>Provide continual, coordinated care</li>
-        <li>Ensure access to appropriate health services</li>
-        <li>Share information freely between providers</li>
-        <li>Support people to optimise quality of life</li>
-      </ul>
-    </div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-header" onclick="toggleAccordion(this)">
-      3️⃣ Target Priority Populations <span class="arrow">▼</span>
-    </div>
-    <div class="acc-body">
-      <ul>
-        <li>Aboriginal and Torres Strait Islander health</li>
-        <li>Aim for action and empowerment of disadvantaged groups</li>
-        <li>Address inequities in chronic disease burden</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin-bottom:14px;">Principles of NSFCC</h3>
-<div class="principles-grid">
-  <div class="principle-card" style="background:var(--light-sage);border-color:rgba(107,143,110,0.4);">
-    <h4>👤 Person-Centred</h4>
-    <p>Values needs of individuals, carers, and families. Care is tailored to the person.</p>
-  </div>
-  <div class="principle-card" style="background:var(--light-terracotta);border-color:rgba(201,106,59,0.3);">
-    <h4>⚖️ Equity</h4>
-    <p>Safe, high-quality healthcare for all people, regardless of background.</p>
-  </div>
-  <div class="principle-card" style="background:var(--light-teal);border-color:rgba(74,143,163,0.3);">
-    <h4>🚪 Access</h4>
-    <p>Services are appropriate, available, and affordable for all who need them.</p>
-  </div>
-  <div class="principle-card" style="background:#fdf5e0;border-color:rgba(212,168,67,0.3);">
-    <h4>♻️ Sustainability</h4>
-    <p>Long-term, responsible management of resources for future generations.</p>
-  </div>
-  <div class="principle-card" style="background:var(--light-lavender);border-color:rgba(139,127,184,0.3);">
-    <h4>🤝 Collaboration</h4>
-    <p>Cooperate and partner across sectors to achieve greater health impact.</p>
-  </div>
-  <div class="principle-card" style="background:var(--light-rose);border-color:rgba(201,139,139,0.3);">
-    <h4>📊 Accountability</h4>
-    <p>Transparency and accountability — achieving best value in public interest.</p>
-  </div>
-  <div class="principle-card" style="background:var(--light-sage);border-color:rgba(107,143,110,0.4);">
-    <h4>🔬 Evidence-Based</h4>
-    <p>Use epidemiological data and best practices to inform decisions.</p>
-  </div>
-  <div class="principle-card" style="background:var(--light-teal);border-color:rgba(74,143,163,0.3);">
-    <h4>🌐 Shared Responsibility</h4>
-    <p>All parties — individuals, families, communities, governments — understand and fulfil their roles.</p>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- QUIZ -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="quiz">
-    <div class="section-header s-terracotta">
-      <span class="emoji">🧠</span>
-      <h2>Quick Quiz — Test Yourself</h2>
-    </div>
-
-```
-<div class="quiz-card">
-  <div id="quiz-container">
-    <div class="fc-counter" id="quiz-counter">Question 1 of 12</div>
-    <div class="quiz-q" id="quiz-q"></div>
-    <div class="quiz-opts" id="quiz-opts"></div>
-    <div class="quiz-feedback" id="quiz-fb"></div>
-    <div class="quiz-nav">
-      <button class="btn" id="quiz-next" onclick="nextQuestion()" style="display:none">Next →</button>
-      <span id="quiz-score"></span>
-    </div>
-  </div>
-  <div id="quiz-done" style="display:none; text-align:center; padding:20px 0;">
-    <div style="font-size:2.5rem; margin-bottom:12px;">🎉</div>
-    <div style="font-family:'Fraunces',serif; font-size:1.4rem; font-weight:600;" id="quiz-final"></div>
-    <p style="opacity:0.6; font-size:0.85rem; margin-top:6px;">Review any topics you found tricky above!</p>
-    <button class="btn" style="margin-top:16px;" onclick="startQuiz()">Retry Quiz</button>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- FLASHCARDS -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="flashcards">
-    <div class="section-header s-lavender">
-      <span class="emoji">🃏</span>
-      <h2>Key Term Flashcards</h2>
-    </div>
-    <p style="font-size:0.87rem; opacity:0.7; margin-bottom:16px;">Click the card to flip. Use the arrows to navigate.</p>
-
-```
-<div class="flashcard-section">
-  <div class="fc-counter" id="fc-counter">Card 1 of 20</div>
-  <div class="flashcard-deck" id="flashcard" onclick="flipCard()">
-    <div class="flashcard-inner" id="fc-inner">
-      <div class="flashcard-face fc-front">
-        <div class="fc-label">Term</div>
-        <div class="fc-text" id="fc-front-text"></div>
+    <p class="pyr-note">⬆ Lower needs must generally be met before higher-level needs motivate behaviour</p>
+  </div>
+  <div class="ib ib-l" style="margin-bottom:28px"><strong>📝 Exam Tip</strong><p>Explain the <em>purpose</em> (motivational theory), the <em>characteristics</em> of each level, and link them to real health behaviours or specific population groups with examples.</p></div>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:16px;color:var(--lilac-deep)">Socio-Ecological Model of Health</h3>
+  <div class="sew">
+    <div class="set">Five Nested Levels</div>
+    <div class="ses">Each level influences health, from the individual outward to society</div>
+    <div class="ser se1"><strong>🧠 Individual</strong><p>Personal characteristics: knowledge, attitudes, beliefs, genetics, skills, health literacy, personal behaviours, decision-making, personality, self-control</p></div>
+    <div class="ser se2"><strong>👨‍👩‍👧 Interpersonal</strong><p>Social networks and relationships: family, friends, peer groups, peer pressure, support networks, role models — all influence health behaviours</p></div>
+    <div class="ser se3"><strong>🏫 Organisational</strong><p>Structures and policies within organisations: workplaces, schools, sports clubs, healthcare settings — rules, culture, and programs shape behaviour</p></div>
+    <div class="ser se4"><strong>🏘️ Community</strong><p>Community characteristics: neighbourhood safety, cultural norms, local facilities and resources, community organisations, physical environment</p></div>
+    <div class="ser se5"><strong>🌏 Society / Policy</strong><p>Broad structures: laws and regulations, government funding, health campaigns, economic systems — public policy shapes the environments in which all individuals live</p></div>
+    <div class="ib ib-s" style="margin-top:16px;margin-bottom:0"><strong>Purpose</strong><p>Recognises that health is shaped by multiple interacting levels simultaneously. The most effective health interventions target <em>several</em> levels at once.</p></div>
+  </div>
+</section>
+
+<!-- 3. POPULATIONS -->
+
+<section class="ts th-m" id="populations">
+  <div class="sh"><div class="si">👥</div><div><h2>Specific Populations</h2><div class="sh-sub">Access & Equity issues for distinct population groups</div></div></div>
+  <div class="cg" style="margin-bottom:22px">
+    <div class="card cm"><h3>🚪 Access</h3><p>The <strong>ability</strong> of individuals and communities to <em>obtain and use</em> healthcare services when needed — about whether services are physically reachable and available.</p></div>
+    <div class="card cs"><h3>⚖️ Equity</h3><p><strong>Just distribution</strong> of health resources, opportunities, and outcomes — ensuring everyone has the ability to achieve their highest possible level of health.</p></div>
+  </div>
+  <div class="acc">
+    <div class="ai"><div class="ah" onclick="tA(this)">🏜️ Rural & Remote Australians <span class="aa">▼</span></div><div class="ab"><p><strong>Access Issues:</strong> Limited healthcare facilities, very long travel distances, healthcare provider shortages, lack of specialists, unreliable internet for telehealth.</p><p><strong>Equity Issues:</strong> Higher rates of chronic disease and injury, lower insurance coverage, fewer specialised services, reduced life expectancy compared to metropolitan Australians.</p></div></div>
+    <div class="ai"><div class="ah" onclick="tA(this)">👴 Elderly <span class="aa">▼</span></div><div class="ab"><p><strong>Access Issues:</strong> Mobility and transport challenges, aged care shortages, digital divide limiting telehealth, difficulty navigating complex health systems.</p><p><strong>Equity Issues:</strong> Age-related discrimination (ageism), higher prevalence of chronic illness, financial constraints on fixed incomes, social isolation.</p></div></div>
+    <div class="ai"><div class="ah" onclick="tA(this)">🪃 First Nations People <span class="aa">▼</span></div><div class="ab"><p><strong>Access Issues:</strong> Remote and very remote locations with limited healthcare infrastructure, chronically underfunded services, lack of culturally safe care.</p><p><strong>Equity Issues:</strong> Intergenerational historical trauma, significantly higher rates of chronic disease, lower life expectancy (~8–10 years less), systemic racism and discrimination.</p></div></div>
+    <div class="ai"><div class="ah" onclick="tA(this)">🏳️‍🌈 LGBTIQ+ <span class="aa">▼</span></div><div class="ab"><p><strong>Access Issues:</strong> Discrimination or fear of discrimination from providers, lack of culturally safe and affirming care, reluctance to disclose identity.</p><p><strong>Equity Issues:</strong> Higher rates of mental health issues, depression, anxiety, suicidality; impacts of homophobia/transphobia; lack of inclusive health programs.</p></div></div>
+    <div class="ai"><div class="ah" onclick="tA(this)">🔒 People in Prison <span class="aa">▼</span></div><div class="ab"><p><strong>Access Issues:</strong> Restricted access to specialists, limited healthcare choices, inadequate mental health and dental support.</p><p><strong>Equity Issues:</strong> Higher rates of mental illness, substance use disorders, and communicable diseases; social marginalisation and poor health outcomes post-release.</p></div></div>
+    <div class="ai"><div class="ah" onclick="tA(this)">🌍 Culturally & Linguistically Diverse (CALD) <span class="aa">▼</span></div><div class="ab"><p><strong>Access Issues:</strong> Language barriers, lack of culturally appropriate and translated resources, low English-language health literacy.</p><p><strong>Equity Issues:</strong> Cultural differences in health beliefs, discrimination, socioeconomic disadvantage, reliance on community networks for health information.</p></div></div>
+    <div class="ai"><div class="ah" onclick="tA(this)">👶 Children, Youth & Mothers/Babies <span class="aa">▼</span></div><div class="ab"><p><strong>Access Issues:</strong> Dependence on adults to access care, gaps in school-based health services, maternal health service gaps in regional and remote areas.</p><p><strong>Equity Issues:</strong> Childhood poverty affecting development, adverse childhood experiences (ACEs), vulnerability to long-term health impacts from unmet early needs.</p></div></div>
+    <div class="ai"><div class="ah" onclick="tA(this)">🎖️ Veterans <span class="aa">▼</span></div><div class="ab"><p><strong>Access Issues:</strong> Navigating complex DVA systems, geographic isolation post-service, difficult transition from structured military environment.</p><p><strong>Equity Issues:</strong> High rates of PTSD, TBI, mental health conditions, and suicide risk; barriers created by military culture around help-seeking.</p></div></div>
+  </div>
+  <div class="ib ib-m" style="margin-top:20px"><strong>📊 Epidemiological Data</strong><p>Used to identify health needs of specific populations — includes <em>morbidity</em> (illness rates), <em>mortality</em> (death rates), life expectancy, and other health characteristics. This data drives needs assessment and resource allocation decisions.</p></div>
+</section>
+
+<!-- 4. TYPES OF NEED -->
+
+<section class="ts th-u" id="needs-types">
+  <div class="sh"><div class="si">💡</div><div><h2>Types of Need</h2><div class="sh-sub">Felt · Expressed · Normative · Comparative</div></div></div>
+  <div class="ib ib-u"><strong>Purpose</strong><p>Used in healthcare, social services, and community development to assess and address people's requirements — identifying gaps, prioritising resources, and planning services effectively.</p></div>
+  <div class="ng">
+    <div class="nc nc-f"><span class="ncb">Felt Need</span><h3>Felt Need</h3><p><strong>Definition:</strong> A subjective need an individual <em>perceives or feels</em> they have — not yet acted upon.</p><p><strong>Example:</strong> Person with chronic back pain feels they need physiotherapy but hasn't sought treatment.</p><p><strong>How to determine:</strong> Community surveys, focus groups, community meetings, social media monitoring.</p></div>
+    <div class="nc nc-e"><span class="ncb">Expressed Need</span><h3>Expressed Need</h3><p><strong>Definition:</strong> A felt need that has been <em>acted upon</em> — the individual has taken steps to seek help.</p><p><strong>Example:</strong> Person with back pain visits physiotherapist, expressing their need for treatment.</p><p><strong>How to determine:</strong> Service usage data, waiting lists, hospital admissions, demand for public programs.</p></div>
+    <div class="nc nc-n"><span class="ncb">Normative Need</span><h3>Normative Need</h3><p><strong>Definition:</strong> A need <em>defined by experts or standards</em> — based on public health guidelines or best practices, not individual perception.</p><p><strong>Example:</strong> Recommended daily fruit and vegetable intake from Australian Dietary Guidelines.</p><p><strong>How to determine:</strong> Official guidelines, expert consultation, epidemiological data, safety regulations.</p></div>
+    <div class="nc nc-c"><span class="ncb">Comparative Need</span><h3>Comparative Need</h3><p><strong>Definition:</strong> Determined by <em>comparing groups</em> to identify gaps in service provision between them.</p><p><strong>Example:</strong> Rural town with no mental health services compared to an urban area that has extensive services.</p><p><strong>How to determine:</strong> Compare healthcare access data, government reports, health statistics, best practices.</p></div>
+  </div>
+</section>
+
+<!-- 5. NEEDS ASSESSMENT -->
+
+<section class="ts th-s" id="needs-assess">
+  <div class="sh"><div class="si">📋</div><div><h2>Needs Assessment</h2><div class="sh-sub">7-step systematic process to identify and address health issues</div></div></div>
+  <div class="ib ib-s"><strong>Purpose</strong><p>A systematic process to identify and address health-related issues within a population. Assists decision-makers to <em>allocate resources efficiently</em> and <em>design interventions</em> that improve health outcomes and reduce inequities.</p></div>
+  <div class="stl st-s" style="max-width:700px">
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Identifying Health Issues</h4><p>Recognising health concerns affecting a specific population using epidemiological data. <em>e.g. high rates of type 2 diabetes in a community.</em></p></div></div>
+    <div class="sc"></div>
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Analysis of the Problem</h4><p>Examining root causes, contributing factors, and risk factors. Assessing barriers to healthcare access. <em>e.g. lack of healthy food options and exercise facilities.</em></p></div></div>
+    <div class="sc"></div>
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Prioritising Issues</h4><p>Ranking health problems based on urgency, impact, and feasibility using community input and data. <em>e.g. diabetes prioritised as highly prevalent and preventable.</em></p></div></div>
+    <div class="sc"></div>
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Setting SMART Goals</h4><p>Specific, Measurable, Achievable, Relevant, Time-bound goals aligned with public health guidelines and population needs. <em>e.g. reduce diabetes incidence by 10% over 5 years.</em></p></div></div>
+    <div class="sc"></div>
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Determining Strategies</h4><p>Identifying evidence-based interventions — policy changes, community programs, education campaigns. <em>e.g. subsidised healthy food programs.</em></p></div></div>
+    <div class="sc"></div>
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Developing Action Plans</h4><p>Creating timelines, delegating responsibilities, allocating resources. Engaging health professionals, community leaders, and government agencies.</p></div></div>
+    <div class="sc"></div>
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Evaluating Outcomes</h4><p>Measuring success through epidemiological data and feedback. Adjusting strategies based on effectiveness. <em>e.g. tracking diabetes screening rates.</em></p></div></div>
+  </div>
+</section>
+
+<!-- 6. ACTIONS -->
+
+<section class="ts th-p" id="actions">
+  <div class="sh"><div class="si">⚡</div><div><h2>Actions & Strategies</h2><div class="sh-sub">Addressing health inequity · Ottawa Charter for Health Promotion</div></div></div>
+  <div class="cg" style="margin-bottom:28px">
+    <div class="card cp"><h3>🚪 Improving Access to Healthcare</h3><ul><li>Free or bulk-billed doctor appointments</li><li>Subsidised medications (PBS scheme)</li><li>Accessible clinics for people with disability</li><li>Build hospitals/clinics in remote areas</li><li>Mobile health clinics</li><li>Expanded telehealth online services</li><li>After-hours services</li><li>Translators and bilingual staff</li></ul></div>
+    <div class="card cm"><h3>📚 Improving Health Literacy</h3><ul><li>Clear, simple language — avoid jargon</li><li>Use visual images and infographics</li><li>Develop culturally relevant resources</li><li>Offer resources in multiple formats</li><li>Translate materials into multiple languages</li><li>Provide community workshops</li><li>Community health workers and navigators</li></ul></div>
+  </div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:8px;color:var(--peach-deep)">Ottawa Charter for Health Promotion</h3>
+  <div class="ib ib-p" style="margin-bottom:18px"><p>Promotes a broad, supportive approach to improving health for everyone — focusing on supportive policies, environments, education, community involvement, and preventative care. (WHO, 1986)</p></div>
+  <div class="og">
+    <div class="ot"><div class="ot-i">📖</div><h4>Developing Personal Skills</h4><p>Education and information to increase life skills and support individuals to make healthy choices throughout life.</p></div>
+    <div class="ot"><div class="ot-i">🏛️</div><h4>Building Healthy Public Policy</h4><p>Policies across all sectors — taxes, legislation, regulations — that make healthier choices the easier choices.</p></div>
+    <div class="ot"><div class="ot-i">🌳</div><h4>Creating Supportive Environments</h4><p>Safe, stimulating, and health-enabling physical, social, and economic environments.</p></div>
+    <div class="ot"><div class="ot-i">🤝</div><h4>Strengthening Community Action</h4><p>Empowering communities to set their own priorities, make decisions, and implement health strategies.</p></div>
+    <div class="ot"><div class="ot-i">🏥</div><h4>Reorienting Health Services</h4><p>Shifting the healthcare system's focus from treatment to prevention and long-term health promotion.</p></div>
+  </div>
+</section>
+
+<!-- 7. CONSUMER HEALTH -->
+
+<section class="ts th-r" id="consumer">
+  <div class="sh"><div class="si">🏥</div><div><h2>Consumer Health</h2><div class="sh-sub">Health literacy · Indicators · Australia vs developing countries</div></div></div>
+  <div class="cg" style="margin-bottom:28px">
+    <div class="card cr"><h3>📖 Health Literacy</h3><p>The ability to <em>obtain, read, understand, and use</em> healthcare information to make appropriate health decisions and navigate the health system.</p><p style="margin-top:8px"><strong>Link to health status:</strong> Higher health literacy → better prevention, treatment adherence, health decisions, and overall outcomes.</p></div>
+    <div class="card cs"><h3>📊 Key Health Indicators</h3><ul><li><strong>Life Expectancy:</strong> Avg. years expected to live from birth</li><li><strong>Mortality:</strong> Rate of death in a population</li><li><strong>Morbidity:</strong> Rate of illness or disease</li><li><strong>Infant Mortality Rate:</strong> Deaths per 1,000 live births</li><li><strong>DALYs:</strong> Disability-Adjusted Life Years — combines disability and premature death</li></ul></div>
+  </div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:14px;color:#c05580">Australia vs Developing Countries</h3>
+  <div class="tw">
+    <table class="t-l">
+      <thead><tr><th>Indicator</th><th>🇦🇺 Australia</th><th>🌍 Developing Countries</th></tr></thead>
+      <tbody>
+        <tr><td>Life Expectancy</td><td>~83 years (among world's highest)</td><td>Often 50–70 years; varies widely</td></tr>
+        <tr><td>Infant Mortality</td><td>~3–4 per 1,000 live births</td><td>Can be 30–100+ per 1,000</td></tr>
+        <tr><td>Leading Causes of Death</td><td>Chronic diseases (CVD, cancer)</td><td>Communicable diseases, maternal/child mortality</td></tr>
+        <tr><td>Healthcare Access</td><td>Universal — Medicare; high coverage</td><td>Often limited, inequitable, user-pays</td></tr>
+        <tr><td>Health Literacy</td><td>Generally higher; gaps for CALD, elderly</td><td>Often lower due to education gaps</td></tr>
+        <tr><td>Sanitation & Water</td><td>High quality, universally available</td><td>Significant gaps; major disease burden driver</td></tr>
+        <tr><td>Under-5 Mortality</td><td>Very low (~5 per 1,000)</td><td>Can exceed 50–100 per 1,000 in some nations</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 8. HEALTH SKILLS -->
+
+<section class="ts th-b" id="health-skills">
+  <div class="sh"><div class="si">💪</div><div><h2>Skills for Positive Health</h2><div class="sh-sub">Self-management · Interpersonal · Cultural skills</div></div></div>
+  <div class="cg" style="margin-bottom:22px">
+    <div class="card cr"><h3>🗣️ Assertiveness</h3><p>Expressing thoughts, feelings, needs, and boundaries <em>clearly, confidently, and respectfully</em> — standing up for oneself while respecting others' rights and opinions.</p></div>
+    <div class="card cp"><h3>💫 Resilience</h3><p>Ability to adapt, recover, and grow stronger in the face of challenges, stress, or adversity. The ability to "bounce back" — maintaining wellbeing despite difficulties.</p></div>
+    <div class="card cm"><h3>🧘 Stress Management</h3><p>Strategies and techniques to cope with and reduce stress — identifying sources of stress and applying methods to minimise negative effects on overall wellbeing.</p></div>
+    <div class="card cs"><h3>🤝 Communication & Collaboration</h3><p>Sharing ideas clearly, listening actively, working cooperatively with others. Essential for positive relationships in health and community settings.</p></div>
+    <div class="card cl"><h3>🌏 Cultural Competence</h3><p>Understanding and respecting cultural and language influences on relationship building in health settings — tailoring communication to cultural context.</p></div>
+  </div>
+  <div class="ib ib-b"><strong>🌸 Culture & Health Decisions</strong><p>Cultural background shapes health decision-making around <em>organ and tissue donation</em>, childbirth practices, blood transfusions, and end-of-life care. World events (pandemics, conflicts, social movements) also influence personal, social, and cultural identity — and therefore health behaviours.</p></div>
+</section>
+
+<!-- 9. HEALTH INQUIRY -->
+
+<section class="ts th-s" id="inquiry">
+  <div class="sh"><div class="si">🔍</div><div><h2>Health Inquiry Process</h2><div class="sh-sub">4 steps · Focus questions · Reliable sources · Presenting findings</div></div></div>
+  <div class="ib ib-s"><strong>Purpose</strong><p>A structured process for <em>understanding and improving</em> the health of populations — used to identify health needs, inform policy, and guide service planning.</p></div>
+  <div class="stl st-s" style="max-width:700px;margin-bottom:28px">
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Planning a Health Inquiry</h4><p>Identify and analyse a health issue. Develop <strong>focus questions</strong> — clear, specific, researchable, and open-ended to guide a thorough investigation.</p></div></div>
+    <div class="sc"></div>
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Using a Range of Information Sources</h4><p>Identify and use <em>reliable</em> sources evaluated using CAAPR criteria. Use both primary and secondary, quantitative and qualitative sources.</p></div></div>
+    <div class="sc"></div>
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Interpretation of Information</h4><p>Summarise information, identify <em>trends and patterns</em> in data, develop evidence-based conclusions, and construct a well-supported, logical argument.</p></div></div>
+    <div class="sc"></div>
+    <div class="step"><div class="sb"></div><div class="sbod"><h4>Presentation of Findings</h4><p>Select a format <em>appropriate for the audience</em> — essay, report, oral presentation, poster. Consider language complexity, visual aids, and level of detail.</p></div></div>
+  </div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:14px;color:var(--sky-deep)">CAAPR — Criteria for Reliable Information Sources</h3>
+  <div class="tw">
+    <table class="t-s">
+      <thead><tr><th>Criterion</th><th>What to Ask</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Currency</strong></td><td>How recent is it? Is it up to date?</td><td>Health information changes; outdated data can mislead</td></tr>
+        <tr><td><strong>Authority</strong></td><td>Who wrote it? What are their credentials?</td><td>Expert sources are more reliable than anonymous ones</td></tr>
+        <tr><td><strong>Accuracy</strong></td><td>Is it evidence-based? Referenced? Peer reviewed?</td><td>Ensures information is factually correct and verified</td></tr>
+        <tr><td><strong>Purpose</strong></td><td>Why was it written? Inform, persuade, or sell?</td><td>Identifies potential bias in the information</td></tr>
+        <tr><td><strong>Relevance</strong></td><td>Does it directly address your health issue?</td><td>Keeps your inquiry focused and applicable</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 10. NSFCC -->
+
+<section class="ts th-m" id="nsfcc">
+  <div class="sh"><div class="si">📜</div><div><h2>National Strategic Framework for Chronic Conditions</h2><div class="sh-sub">NSFCC — Objectives · Principles · Chronic conditions</div></div></div>
+  <div class="cg" style="margin-bottom:22px">
+    <div class="card cm"><h3>🩺 Chronic Conditions</h3><ul><li>Long-term and persistent</li><li>Gradual onset (not sudden)</li><li>Compromise quality of life</li><li><strong>Examples:</strong> CVD, type 2 diabetes, osteoporosis, asthma, cancer, mental illness, arthritis</li></ul></div>
+    <div class="card cs"><h3>🎯 Purpose of NSFCC</h3><p>Provides guidance for the development and implementation of <em>policies, strategies, actions, and services</em> to address chronic conditions and improve health outcomes by <strong>preventing</strong> and <strong>managing</strong> chronic conditions in Australia.</p></div>
+  </div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:14px;color:var(--mint-deep)">Three Strategic Objectives</h3>
+  <div class="acc" style="margin-bottom:28px">
+    <div class="ai"><div class="ah" onclick="tA(this)">1️⃣ Focus on Prevention for a Healthier Australia <span class="aa">▼</span></div><div class="ab"><ul><li>Promote health and reduce risk factors across the population</li><li>Create partnerships for health between sectors</li><li>Address chronic conditions at critical life stages (early childhood, adolescence, pregnancy, aged care)</li></ul></div></div>
+    <div class="ai"><div class="ah" onclick="tA(this)">2️⃣ Provide Efficient, Effective and Appropriate Care <span class="aa">▼</span></div><div class="ab"><ul><li>Provide continual and coordinated care across the health system</li><li>Ensure equitable access to appropriate health services</li><li>Share information freely and effectively between care providers</li><li>Support people with chronic conditions to optimise quality of life</li></ul></div></div>
+    <div class="ai"><div class="ah" onclick="tA(this)">3️⃣ Target Priority Populations <span class="aa">▼</span></div><div class="ab"><ul><li>Aboriginal and Torres Strait Islander peoples health and empowerment</li><li>Action and empowerment of disadvantaged and high-risk groups</li><li>Address inequities in chronic disease burden across populations</li></ul></div></div>
+  </div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:16px;color:var(--mint-deep)">Eight Guiding Principles</h3>
+  <div class="pg">
+    <div class="pt pm"><div class="pt-i">👤</div><h4>Person-Centred</h4><p>Values needs of individuals, carers, and families. Care is tailored to the person.</p></div>
+    <div class="pt pp"><div class="pt-i">⚖️</div><h4>Equity</h4><p>Safe, high-quality healthcare accessible for all people regardless of background.</p></div>
+    <div class="pt ps_"><div class="pt-i">🚪</div><h4>Access</h4><p>Services are appropriate, available, and affordable for all who need them.</p></div>
+    <div class="pt pu"><div class="pt-i">♻️</div><h4>Sustainability</h4><p>Long-term responsible management of resources for future generations.</p></div>
+    <div class="pt pl_"><div class="pt-i">🤝</div><h4>Collaboration</h4><p>Cooperate and partner across sectors to achieve greater health impact.</p></div>
+    <div class="pt pb"><div class="pt-i">📊</div><h4>Accountability & Transparency</h4><p>Achieve best value in the public interest with clear reporting.</p></div>
+    <div class="pt pr"><div class="pt-i">🌐</div><h4>Shared Responsibility</h4><p>All parties — individuals, communities, governments — fulfil their roles.</p></div>
+    <div class="pt pm"><div class="pt-i">🔬</div><h4>Evidence-Based</h4><p>Decisions informed by epidemiological data and current best practices.</p></div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+
+<section class="ts" id="quiz" style="scroll-margin-top:64px">
+  <div class="sh"><div class="si" style="background:linear-gradient(135deg,#fce0ea,#f2b8c6)">🧠</div><div><h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3.5vw,1.9rem);color:#c05580">Quick Quiz</h2><div class="sh-sub">12 questions · Instant feedback · Test your knowledge</div></div></div>
+  <div class="qshell">
+    <div id="qm">
+      <div class="qtop">
+        <span class="qctr" id="qctr">Q 1 / 12</span>
+        <div class="qpt"><div class="qpf" id="qpf" style="width:0%"></div></div>
+        <span class="qsb" id="qsb">0 / 12</span>
       </div>
-      <div class="flashcard-face fc-back">
-        <div class="fc-label">Definition</div>
-        <div class="fc-text" id="fc-back-text"></div>
+      <div class="qq" id="qq"></div>
+      <div class="qopts" id="qo"></div>
+      <div class="qfb" id="qfb"></div>
+      <button class="btn btn-p" id="qnxt" onclick="nextQ()" style="display:none">Next question →</button>
+    </div>
+    <div class="qdone" id="qd">
+      <span class="qde" id="qde">🎉</span>
+      <h3 id="qfin"></h3>
+      <p id="qmsg"></p>
+      <button class="btn btn-m" onclick="startQ()">Try again ↺</button>
+    </div>
+  </div>
+</section>
+
+<!-- FLASHCARDS -->
+
+<section class="ts" id="flashcards" style="scroll-margin-top:64px">
+  <div class="sh"><div class="si" style="background:linear-gradient(135deg,#e8dff5,#d4c5e8)">🃏</div><div><h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3.5vw,1.9rem);color:var(--lilac-deep)">Key Term Flashcards</h2><div class="sh-sub">20 essential terms · Click to flip · Arrow keys to navigate</div></div></div>
+  <div class="fcw">
+    <div class="fcc" id="fcc">Card 1 of 20</div>
+    <div class="fcd" id="fcd" onclick="flipFC()">
+      <div class="fci" id="fci">
+        <div class="fcf fcfront"><div class="fctag">Term — click to reveal</div><div class="fcterm" id="fct"></div><div class="fchint">🌸 tap to flip</div></div>
+        <div class="fcf fcback"><div class="fctag">Definition</div><div class="fcdef" id="fcd2"></div></div>
       </div>
     </div>
-  </div>
-  <div class="fc-controls">
-    <button class="fc-btn" onclick="prevCard()">← Prev</button>
-    <button class="fc-btn" onclick="flipCard()">Flip</button>
-    <button class="fc-btn" onclick="nextCard()">Next →</button>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- CHECKLIST -->
-
-  <!-- ══════════════════════════════════════════════ -->
-
-  <div class="topic-section fade-in" id="checklist">
-    <div class="section-header s-sage">
-      <span class="emoji">✅</span>
-      <h2>Exam Readiness Checklist</h2>
+    <div class="fcbtns">
+      <button class="btn btn-sec" onclick="prevFC()">← Prev</button>
+      <button class="btn btn-m" onclick="flipFC()">Flip</button>
+      <button class="btn btn-sec" onclick="nextFC()">Next →</button>
     </div>
-    <p style="font-size:0.87rem; opacity:0.7; margin-bottom:16px;">Tick each outcome when you feel confident. Your progress saves automatically.</p>
-
-```
-<div id="checklist-container"></div>
-```
-
   </div>
+</section>
+
+<!-- CHECKLIST -->
+
+<section class="ts" id="checklist" style="scroll-margin-top:64px">
+  <div class="sh"><div class="si" style="background:linear-gradient(135deg,#d0edd8,#b8dcc8)">✅</div><div><h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3.5vw,1.9rem);color:var(--mint-deep)">Exam Readiness Checklist</h2><div class="sh-sub">Tick each outcome as you master it · Saves automatically in your browser</div></div></div>
+  <div id="clc"></div>
+</section>
 
 </main>
 
 <script>
-// ─── FADE IN ────────────────────────────────────────
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.08 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+// SCROLL REVEAL
+const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06});
+document.querySelectorAll('.ts').forEach(el=>ro.observe(el));
 
-// ─── ACCORDION ──────────────────────────────────────
-function toggleAccordion(header) {
-  const body = header.nextElementSibling;
-  const arrow = header.querySelector('.arrow');
-  const isOpen = body.classList.contains('open');
-  // close all
-  document.querySelectorAll('.acc-body').forEach(b => b.classList.remove('open'));
-  document.querySelectorAll('.acc-header .arrow').forEach(a => a.style.transform = '');
-  if(!isOpen) {
-    body.classList.add('open');
-    arrow.style.transform = 'rotate(180deg)';
-  }
-}
+// ACCORDION
+function tA(h){const b=h.nextElementSibling,a=h.querySelector('.aa'),o=b.classList.contains('open');
+  document.querySelectorAll('.ab').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.aa').forEach(x=>x.style.transform='');
+  if(!o){b.classList.add('open');a.style.transform='rotate(180deg)'}}
 
-// ─── QUIZ DATA ──────────────────────────────────────
-const quizData = [
-  { q: "What is the difference between health equity and health equality?", opts: ["They mean the same thing", "Equity is fair distribution ensuring everyone can achieve best health; equality means giving everyone the same thing", "Equality considers individual needs; equity gives everyone the same", "Equity relates only to economic factors"], ans: 1, fb: "Equity = just distribution so everyone can reach their highest health. Equality = treating everyone the same, which doesn't account for different needs." },
-  { q: "Which level of Maslow's hierarchy includes food, water, and sleep?", opts: ["Safety Needs", "Love & Belonging", "Physiological Needs", "Esteem Needs"], ans: 2, fb: "Physiological needs are the most basic — food, water, shelter, sleep. They sit at the base of the pyramid." },
-  { q: "In the socio-ecological model, which level involves schools, workplaces, and health services?", opts: ["Individual", "Interpersonal", "Organisational", "Community"], ans: 2, fb: "The Organisational level involves structures and policies within organisations like schools, workplaces, and healthcare settings." },
-  { q: "A felt need that has been acted upon is called a…", opts: ["Normative need", "Expressed need", "Comparative need", "Subjective need"], ans: 1, fb: "Expressed Need = a felt need that has been acted upon (e.g. actually visiting the doctor)." },
-  { q: "What does NSFCC stand for?", opts: ["National Social Framework for Community Care", "National Strategic Framework for Chronic Conditions", "National Standards for Clinical Care", "National System for Coordinating Care"], ans: 1, fb: "NSFCC = National Strategic Framework for Chronic Conditions." },
-  { q: "Which of the following is a quantitative health measure?", opts: ["A patient's experience of pain", "A focus group discussion", "Mortality rate per 100,000 population", "An interview about health beliefs"], ans: 2, fb: "Quantitative data is numerical and measurable. Mortality rates are numerical data points." },
-  { q: "Which Ottawa Charter action area focuses on shifting health services from treatment to prevention?", opts: ["Building Healthy Public Policy", "Strengthening Community Action", "Reorienting Health Services", "Creating Supportive Environments"], ans: 2, fb: "Reorienting Health Services shifts focus from clinical treatment to prevention and health promotion." },
-  { q: "Morbidity refers to…", opts: ["Death rates in a population", "The rate of illness or disease in a population", "Life expectancy at birth", "The burden of disability"], ans: 1, fb: "Morbidity = illness. Mortality = death. Both are key epidemiological indicators." },
-  { q: "Which type of need is defined by experts or public health standards?", opts: ["Felt need", "Expressed need", "Comparative need", "Normative need"], ans: 3, fb: "Normative need is defined by experts/standards (e.g. recommended dietary intakes from Australian Dietary Guidelines)." },
-  { q: "Resilience in health is best described as…", opts: ["Ability to communicate assertively", "Ability to adapt and recover from challenges — 'bounce back'", "Knowledge of health services and how to use them", "The ability to identify stress triggers"], ans: 1, fb: "Resilience = ability to adapt, recover, and grow stronger in the face of challenges." },
-  { q: "What is the primary purpose of a needs assessment?", opts: ["To rank populations by health status", "To evaluate the success of past interventions only", "To identify health issues and guide resource allocation and intervention planning", "To compare Australia with developing countries"], ans: 2, fb: "Needs assessment is a systematic process to identify health issues and guide resource allocation and intervention design." },
-  { q: "Which NSFCC principle refers to long-term responsible management of resources?", opts: ["Equity", "Accountability", "Sustainability", "Shared Responsibility"], ans: 2, fb: "Sustainability = long-term management of resources so services can continue into the future." }
+// QUIZ DATA
+const QD=[
+  {q:"What is health equity?",o:["Treating all patients identically","Just distribution of resources so everyone can achieve their highest health","Equal funding for all hospitals","Access to the same GP"],a:1,f:"Equity = just distribution ensuring everyone can achieve their highest possible health. Equality means giving everyone the same; equity accounts for different starting points."},
+  {q:"Which Maslow level includes food, water, and shelter?",o:["Safety Needs","Esteem Needs","Physiological Needs","Love & Belonging"],a:2,f:"Physiological needs are the foundational level — basic survival needs like food, water, shelter, sleep, and warmth must be met before higher needs motivate behaviour."},
+  {q:"Which Socio-Ecological Model level includes workplaces, schools and health services?",o:["Community","Interpersonal","Organisational","Society"],a:2,f:"Organisational = structures and policies within organisations such as workplaces, schools, sports clubs, and healthcare settings."},
+  {q:"A felt need that has been acted upon is called:",o:["Normative need","Comparative need","Expressed need","Latent need"],a:2,f:"Expressed Need = a felt need that has been acted upon (e.g. booking a doctor's appointment, joining a waiting list)."},
+  {q:"What does NSFCC stand for?",o:["National Social Framework for Community Care","National Standards for Clinical Conditions","National Strategic Framework for Chronic Conditions","National System for Coordinating Care"],a:2,f:"NSFCC = National Strategic Framework for Chronic Conditions."},
+  {q:"Mortality refers to:",o:["Illness rates in a population","Death rates in a population","Life expectancy from birth","Disability-adjusted life years"],a:1,f:"Mortality = death rates. Morbidity = illness/disease rates. Both are key epidemiological indicators."},
+  {q:"Which Ottawa Charter area involves shifting focus from treatment to prevention?",o:["Building Healthy Public Policy","Developing Personal Skills","Reorienting Health Services","Creating Supportive Environments"],a:2,f:"Reorienting Health Services shifts the healthcare system's focus from treating disease to preventing it and promoting long-term health."},
+  {q:"Health literacy is best described as:",o:["The number of health services available","Ability to obtain, understand, and use health information for decisions","Knowledge of medical terminology","Access to bulk-billed care"],a:1,f:"Health literacy = ability to obtain, read, understand, and use healthcare information to make appropriate health decisions and navigate the health system."},
+  {q:"Which type of need is identified by comparing population groups?",o:["Felt need","Expressed need","Normative need","Comparative need"],a:3,f:"Comparative Need = identified by comparing groups and finding gaps in service provision between them (e.g. rural vs urban mental health services)."},
+  {q:"Resilience in health refers to:",o:["Being free from illness","Ability to adapt and 'bounce back' from adversity","Confidence in communicating health needs","Following a healthy diet consistently"],a:1,f:"Resilience = ability to adapt, recover, and grow stronger in the face of challenges — maintaining wellbeing despite difficulties."},
+  {q:"What is the primary purpose of a needs assessment?",o:["To compare Australia with other countries","To rank populations by income","To systematically identify health issues and guide resource allocation","To develop personal health skills"],a:2,f:"Needs assessment = systematic process to identify and address health issues, allocate resources efficiently, and design effective interventions."},
+  {q:"Which NSFCC principle ensures long-term management of resources?",o:["Equity","Person-Centred","Shared Responsibility","Sustainability"],a:3,f:"Sustainability = long-term, responsible management of resources to ensure health services can continue to be delivered into the future."}
 ];
+let qi=0,qs=0,qa=false;
+function startQ(){qi=0;qs=0;qa=false;document.getElementById('qd').style.display='none';document.getElementById('qm').style.display='block';renderQ()}
+function renderQ(){qa=false;const d=QD[qi];
+  document.getElementById('qctr').textContent=`Q ${qi+1} / ${QD.length}`;
+  document.getElementById('qpf').style.width=(qi/QD.length*100)+'%';
+  document.getElementById('qsb').textContent=`${qs} / ${QD.length}`;
+  document.getElementById('qq').textContent=d.q;
+  document.getElementById('qnxt').style.display='none';
+  const fb=document.getElementById('qfb');fb.className='qfb';fb.textContent='';
+  const op=document.getElementById('qo');op.innerHTML='';
+  d.o.forEach((o,i)=>{const b=document.createElement('button');b.className='qo';b.textContent=o;b.onclick=()=>pick(i);op.appendChild(b)})}
+function pick(i){if(qa)return;qa=true;const d=QD[qi];
+  document.querySelectorAll('.qo')[d.a].classList.add('correct');
+  if(i!==d.a)document.querySelectorAll('.qo')[i].classList.add('wrong');
+  else qs++;
+  document.getElementById('qsb').textContent=`${qs} / ${QD.length}`;
+  const fb=document.getElementById('qfb');fb.textContent=d.f;
+  fb.className='qfb show '+(i===d.a?'correct':'wrong');
+  document.getElementById('qnxt').style.display='inline-flex'}
+function nextQ(){qi++;if(qi>=QD.length){
+  document.getElementById('qm').style.display='none';document.getElementById('qd').style.display='block';
+  const p=Math.round(qs/QD.length*100);
+  const e=p>=90?'🌟':p>=70?'🎉':p>=50?'💪':'📚';
+  const m=p>=90?'Outstanding! You\'re exam ready!':p>=70?'Great work — nearly there!':p>=50?'Good effort — keep revising the tricky sections.':'Don\'t worry, review the content above and try again!';
+  document.getElementById('qde').textContent=e;document.getElementById('qfin').textContent=`${qs} / ${QD.length} — ${p}%`;document.getElementById('qmsg').textContent=m;
+}else renderQ()}
 
-let qIndex = 0, score = 0, answered = false;
-
-function startQuiz() {
-  qIndex = 0; score = 0; answered = false;
-  document.getElementById('quiz-done').style.display = 'none';
-  document.getElementById('quiz-container').style.display = 'block';
-  loadQuestion();
-}
-
-function loadQuestion() {
-  answered = false;
-  const q = quizData[qIndex];
-  document.getElementById('quiz-counter').textContent = `Question ${qIndex+1} of ${quizData.length}`;
-  document.getElementById('quiz-q').textContent = q.q;
-  document.getElementById('quiz-next').style.display = 'none';
-  document.getElementById('quiz-score').textContent = `Score: ${score}/${quizData.length}`;
-  const fb = document.getElementById('quiz-fb');
-  fb.className = 'quiz-feedback';
-  fb.textContent = '';
-  const optsEl = document.getElementById('quiz-opts');
-  optsEl.innerHTML = '';
-  q.opts.forEach((opt, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'quiz-opt';
-    btn.textContent = opt;
-    btn.onclick = () => selectAnswer(i);
-    optsEl.appendChild(btn);
-  });
-}
-
-function selectAnswer(i) {
-  if(answered) return;
-  answered = true;
-  const q = quizData[qIndex];
-  const opts = document.querySelectorAll('.quiz-opt');
-  opts[q.ans].classList.add('correct');
-  if(i !== q.ans) opts[i].classList.add('wrong');
-  else score++;
-  const fb = document.getElementById('quiz-fb');
-  fb.textContent = q.fb;
-  fb.className = 'quiz-feedback show ' + (i === q.ans ? 'correct' : 'wrong');
-  document.getElementById('quiz-score').textContent = `Score: ${score}/${quizData.length}`;
-  document.getElementById('quiz-next').style.display = 'inline-block';
-}
-
-function nextQuestion() {
-  qIndex++;
-  if(qIndex >= quizData.length) {
-    document.getElementById('quiz-container').style.display = 'none';
-    document.getElementById('quiz-done').style.display = 'block';
-    const pct = Math.round(score/quizData.length*100);
-    const msg = pct >= 80 ? '🌟 Excellent!' : pct >= 60 ? '👍 Good effort!' : '📚 Keep revising!';
-    document.getElementById('quiz-final').textContent = `${score}/${quizData.length} — ${pct}% ${msg}`;
-  } else {
-    loadQuestion();
-  }
-}
-
-// ─── FLASHCARDS ─────────────────────────────────────
-const flashcards = [
-  { t: "Health Equity", d: "Just distribution of health resources, opportunities, and outcomes across populations, ensuring everyone has the ability to achieve their highest level of health." },
-  { t: "Socio-Ecological Model", d: "A theoretical framework used in public health to understand the complex interplay of factors influencing health across 5 levels: Individual, Interpersonal, Organisational, Community, Society." },
-  { t: "Maslow's Hierarchy of Needs", d: "A theory developed by Abraham Maslow suggesting individuals must satisfy lower-level needs before they can focus on higher-level needs — from physiological survival to self-actualisation." },
-  { t: "Felt Need", d: "A subjective need that an individual perceives or feels they have, but has not yet acted upon. Determined through surveys, focus groups, community meetings." },
-  { t: "Expressed Need", d: "A felt need that has been acted upon — the individual has taken steps to seek help (e.g. booking a doctor's appointment)." },
-  { t: "Normative Need", d: "A need defined by experts or standards — based on public health guidelines or best practices (e.g. Australian Dietary Guidelines recommendations)." },
-  { t: "Comparative Need", d: "Determined by comparing different groups to identify gaps in service provision (e.g. rural area with no mental health services compared to urban areas)." },
-  { t: "Needs Assessment", d: "A systematic process to identify and address health-related issues within a population to allocate resources efficiently and design effective health interventions." },
-  { t: "NSFCC", d: "National Strategic Framework for Chronic Conditions — provides guidance for policies, strategies, and services to prevent and manage chronic conditions in Australia." },
-  { t: "Morbidity", d: "The rate of illness, disease, or injury in a population. A key epidemiological indicator of population health." },
-  { t: "Mortality", d: "Death — specifically the rate of deaths in a population, often for specific causes or age groups." },
-  { t: "Life Expectancy", d: "The average number of years a person born in a given year is expected to live, based on current age-specific mortality rates." },
-  { t: "Health Literacy", d: "The ability to obtain, read, understand, and use healthcare information to make appropriate health decisions. Higher literacy links to better health outcomes." },
-  { t: "Resilience", d: "The ability to adapt, recover, and grow stronger in the face of challenges, stress, or adversity — maintaining wellbeing despite difficulties." },
-  { t: "Assertiveness", d: "Expressing thoughts, feelings, needs, and boundaries clearly, confidently, and respectfully while standing up for oneself and respecting others." },
-  { t: "Ottawa Charter", d: "A WHO framework with 5 action areas for health promotion: Building Healthy Public Policy, Creating Supportive Environments, Strengthening Community Action, Developing Personal Skills, Reorienting Health Services." },
-  { t: "Quantitative Data", d: "Data measured and expressed numerically — e.g. mortality rates, BMI measurements, prevalence statistics. Objective and statistically analysable." },
-  { t: "Qualitative Data", d: "Non-numerical information that describes qualities, characteristics, or attributes — e.g. interviews, focus groups, personal health narratives." },
-  { t: "Health Inequity", d: "Unfair, avoidable differences in health outcomes between groups, caused by social, economic, or environmental disadvantages (not just biological differences)." },
-  { t: "Epidemiological Data", d: "Population-level data on the distribution and determinants of health conditions — includes morbidity, mortality, life expectancy, and risk factors. Used to inform needs assessments." }
+// FLASHCARDS
+const FC=[
+  {t:"Health Equity",d:"Just distribution of health resources, opportunities, and outcomes across populations, ensuring everyone has the ability to achieve their highest possible level of health."},
+  {t:"Holistic Health",d:"An approach considering all dimensions of wellbeing — physical, mental/emotional, social, and spiritual — and how they interact and influence each other."},
+  {t:"Socio-Ecological Model",d:"A theoretical framework recognising that health is influenced by multiple interacting levels: Individual, Interpersonal, Organisational, Community, and Society/Policy."},
+  {t:"Maslow's Hierarchy of Needs",d:"A motivational theory by Abraham Maslow. Individuals must generally satisfy lower-level needs (physiological → safety → belonging → esteem) before higher-level needs motivate behaviour."},
+  {t:"Felt Need",d:"A subjective need an individual perceives or feels they have, but has not yet acted upon. Identified via surveys, focus groups, or community meetings."},
+  {t:"Expressed Need",d:"A felt need that has been acted upon — the individual has taken steps to seek help (e.g. visiting a doctor, joining a waiting list)."},
+  {t:"Normative Need",d:"A need defined by experts or public health standards — based on guidelines or best practices rather than individual perception. e.g. dietary guidelines."},
+  {t:"Comparative Need",d:"Identified by comparing different groups or communities and finding gaps in service provision between them. e.g. rural vs urban mental health services."},
+  {t:"Needs Assessment",d:"A systematic 7-step process: identify issues → analyse → prioritise → set SMART goals → determine strategies → develop action plans → evaluate outcomes."},
+  {t:"NSFCC",d:"National Strategic Framework for Chronic Conditions. Guides Australian policies and services to prevent and manage chronic conditions, with 3 objectives and 8 guiding principles."},
+  {t:"Morbidity",d:"The rate of illness, disease, or injury in a population. A key epidemiological indicator alongside mortality, life expectancy, and infant mortality rate."},
+  {t:"Mortality",d:"The rate of deaths in a population, often measured per 100,000 population or for specific causes or age groups. Distinct from morbidity (illness)."},
+  {t:"Life Expectancy",d:"The average number of years a person born in a given year is expected to live, based on current age-specific mortality rates for that population."},
+  {t:"Health Literacy",d:"The ability to obtain, read, understand, and use healthcare information to make appropriate health decisions and navigate the health system effectively."},
+  {t:"Resilience",d:"The ability to adapt, recover, and grow stronger in the face of challenges, stress, or adversity — maintaining mental, emotional, and physical wellbeing despite difficulties."},
+  {t:"Ottawa Charter",d:"A WHO (1986) health promotion framework with 5 action areas: Building Healthy Public Policy, Creating Supportive Environments, Strengthening Community Action, Developing Personal Skills, Reorienting Health Services."},
+  {t:"Quantitative Data",d:"Data measured and expressed numerically. Examples: mortality rates, BMI, hospital admission numbers, survey scales. Objective and statistically analysable."},
+  {t:"Qualitative Data",d:"Non-numerical information describing qualities, characteristics, or attributes. Examples: interviews, focus groups, personal narratives. Captures lived experience."},
+  {t:"Health Inequity",d:"Unfair, avoidable differences in health outcomes between groups — caused by social, economic, or environmental disadvantages. Distinct from health inequality, which is simply measurable difference."},
+  {t:"Epidemiological Data",d:"Population-level data on the distribution and determinants of health conditions — including morbidity, mortality, life expectancy, risk factors. Used to inform needs assessments and policy."}
 ];
+let fi=0;
+function uFC(){document.getElementById('fct').textContent=FC[fi].t;document.getElementById('fcd2').textContent=FC[fi].d;document.getElementById('fcc').textContent=`Card ${fi+1} of ${FC.length}`;document.getElementById('fcd').classList.remove('flip')}
+function flipFC(){document.getElementById('fcd').classList.toggle('flip')}
+function nextFC(){fi=(fi+1)%FC.length;uFC()}
+function prevFC(){fi=(fi-1+FC.length)%FC.length;uFC()}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')nextFC();if(e.key==='ArrowLeft')prevFC();if(e.key===' '){e.preventDefault();flipFC()}});
 
-let fcIndex = 0;
-
-function updateCard() {
-  const fc = flashcards[fcIndex];
-  document.getElementById('fc-front-text').textContent = fc.t;
-  document.getElementById('fc-back-text').textContent = fc.d;
-  document.getElementById('fc-counter').textContent = `Card ${fcIndex+1} of ${flashcards.length}`;
-  document.getElementById('flashcard').classList.remove('flipped');
-}
-
-function flipCard() { document.getElementById('flashcard').classList.toggle('flipped'); }
-function nextCard() { fcIndex = (fcIndex+1) % flashcards.length; updateCard(); }
-function prevCard() { fcIndex = (fcIndex - 1 + flashcards.length) % flashcards.length; updateCard(); }
-
-// ─── CHECKLIST ──────────────────────────────────────
-const checklistItems = [
-  { cat: "🌿 Holistic Health", items: [
-    "I can identify and define characteristics and needs of a number of specific populations",
-    "I can identify and explain access and equity issues experienced by specific populations",
-    "I can identify and describe factors that create health inequities",
-    "I can define sources of quantitative and qualitative data and explain the difference"
-  ]},
-  { cat: "🔬 Principles, Frameworks, Models & Theories", items: [
-    "I can describe the purpose of the socio-ecological model of health",
-    "I can identify and explain the five levels of the socio-ecological model of health",
-    "I can explain the purpose and characteristics of the five levels of Maslow's Hierarchy of Needs"
-  ]},
-  { cat: "⚡ Actions & Strategies", items: [
-    "I can describe the purpose of a needs assessment",
-    "I can identify and define the four types of need",
-    "I can identify and apply the steps in needs assessment",
-    "I can identify and explain actions to address health inequity",
-    "I can identify and describe the principles of the NSFCC"
-  ]},
-  { cat: "🏥 Consumer Health", items: [
-    "I can explain the relationship between health literacy and health status",
-    "I can compare health indicators between Australia and developing countries",
-    "I can define life expectancy, mortality, and morbidity",
-    "I can identify and explain the objectives of the NSFCC"
-  ]},
-  { cat: "💪 Health Skills", items: [
-    "I can identify and explain skills that support positive health behaviours",
-    "I can discuss the impact of culture on health decision-making about organ/tissue donation, childbirth, and blood transfusions",
-    "I can discuss the impact of world events on personal, social, and cultural identity",
-    "I can discuss language and cultural influences on relationship building in health settings",
-    "I can identify and define communication and collaboration skills"
-  ]},
-  { cat: "🔍 Health Inquiry", items: [
-    "I can identify and describe each step of the health inquiry process",
-    "I can explain what makes a good focus question",
-    "I can outline the criteria for determining reliable information sources",
-    "I can identify trends and patterns in data",
-    "I can develop an argument",
-    "I can draw an evidence-based conclusion",
-    "I can describe why presentation of findings should suit particular audiences"
-  ]}
+// CHECKLIST
+const CLD=[
+  {s:"🌿 Holistic Health",i:["I can identify and define characteristics and needs of a number of specific populations","I can identify and explain access and equity issues experienced by specific populations","I can identify and describe factors that create health inequities","I can define sources of quantitative and qualitative data and explain the difference"]},
+  {s:"🔬 Models & Frameworks",i:["I can describe the purpose of the socio-ecological model of health","I can identify and explain the five levels of the socio-ecological model","I can explain the purpose and characteristics of the five levels of Maslow's Hierarchy of Needs"]},
+  {s:"⚡ Actions & Strategies",i:["I can describe the purpose of a needs assessment","I can identify and define the four types of need","I can identify and apply the seven steps in needs assessment","I can identify and explain actions to address health inequity","I can identify and describe the principles of the NSFCC"]},
+  {s:"🏥 Consumer Health",i:["I can explain the relationship between health literacy and health status","I can compare health indicators between Australia and developing countries","I can define life expectancy, mortality, and morbidity","I can identify and explain the objectives of the NSFCC"]},
+  {s:"💪 Health Skills",i:["I can identify and explain skills that support positive health behaviours","I can discuss the impact of culture on health decisions (organ donation, childbirth, blood transfusions)","I can discuss the impact of world events on personal, social, and cultural identity","I can discuss language and cultural influences on relationship building in health settings","I can identify and define communication and collaboration skills"]},
+  {s:"🔍 Health Inquiry",i:["I can identify and describe each step of the health inquiry process","I can explain what makes a good focus question","I can outline the criteria for determining reliable information sources (CAAPR)","I can identify trends and patterns in data","I can develop a well-supported argument","I can draw an evidence-based conclusion","I can describe why presentation format should suit a particular audience"]}
 ];
+let sv={};try{sv=JSON.parse(localStorage.getItem('hs_v3')||'{}')}catch(e){}
+function buildCL(){const c=document.getElementById('clc');let all=[];
+  CLD.forEach(sec=>{const w=document.createElement('div');w.className='cls';
+    w.innerHTML=`<div class="clsh">${sec.s}</div>`;
+    sec.i.forEach(item=>{
+      const id='c_'+btoa(unescape(encodeURIComponent(item))).replace(/[^a-z0-9]/gi,'').slice(0,24);
+      all.push(id);
+      const d=document.createElement('div');d.className='cli'+(sv[id]?' chk':'');
+      d.innerHTML=`<input type="checkbox" id="${id}" ${sv[id]?'checked':''}><label for="${id}">${item}</label>`;
+      d.querySelector('input').addEventListener('change',function(){sv[id]=this.checked;d.classList.toggle('chk',this.checked);
+        try{localStorage.setItem('hs_v3',JSON.stringify(sv))}catch(e){}upP(all)});
+      w.appendChild(d)});
+    c.appendChild(w)});
+  upP(all)}
+function upP(all){const done=all.filter(id=>sv[id]).length,tot=all.length;
+  document.getElementById('psf').style.width=(done/tot*100)+'%';
+  document.getElementById('psc').textContent=`${done} / ${tot}`}
 
-let savedChecks = {};
-try { savedChecks = JSON.parse(localStorage.getItem('hs_checklist') || '{}'); } catch(e) {}
-
-function buildChecklist() {
-  const container = document.getElementById('checklist-container');
-  let allItems = [];
-  checklistItems.forEach(section => {
-    const sec = document.createElement('div');
-    sec.style.marginBottom = '24px';
-    sec.innerHTML = `<h3 style="font-family:'Fraunces',serif;font-size:1rem;margin-bottom:10px;color:var(--terracotta);">${section.cat}</h3>`;
-    section.items.forEach(item => {
-      const id = 'cl_' + btoa(item).replace(/[^a-z0-9]/gi,'').slice(0,20);
-      allItems.push(id);
-      const div = document.createElement('div');
-      div.className = 'checklist-item' + (savedChecks[id] ? ' checked' : '');
-      div.innerHTML = `<input type="checkbox" id="${id}" ${savedChecks[id]?'checked':''}><label for="${id}">${item}</label>`;
-      div.querySelector('input').addEventListener('change', function() {
-        savedChecks[id] = this.checked;
-        div.classList.toggle('checked', this.checked);
-        try { localStorage.setItem('hs_checklist', JSON.stringify(savedChecks)); } catch(e) {}
-        updateProgress(allItems);
-      });
-      sec.appendChild(div);
-    });
-    container.appendChild(sec);
-    updateProgress(allItems);
-  });
-}
-
-function updateProgress(allItems) {
-  if(!allItems) {
-    // rebuild from scratch
-    let all = [];
-    checklistItems.forEach(s => s.items.forEach(item => {
-      all.push('cl_' + btoa(item).replace(/[^a-z0-9]/gi,'').slice(0,20));
-    }));
-    allItems = all;
-  }
-  const done = allItems.filter(id => savedChecks[id]).length;
-  const total = allItems.length;
-  document.getElementById('bar').style.width = (done/total*100) + '%';
-  document.getElementById('progress-text').textContent = `${done} / ${total} done`;
-}
-
-// ─── INIT ────────────────────────────────────────────
-startQuiz();
-updateCard();
-buildChecklist();
+startQ();uFC();buildCL();
 </script>
 
 </body>
